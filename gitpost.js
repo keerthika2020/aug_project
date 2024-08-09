@@ -1,4 +1,3 @@
-
 <html>
   <head>
   <title>W3Schools Demo</title>
