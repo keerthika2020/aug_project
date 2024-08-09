@@ -155,9 +155,18 @@ each element must have unique id
 text area resizeable can type multiple lines
 input box not resizable can type only one line
 
-
-
-
+git init
+git add .
+git commit -m "initial commit"
+git config --global user.email "keerthika.r2122@gmail.com"
+git config --global user.name "keerthika"
+give the code in your git hub code
+git push -u origin master
+# if you add a file then do this
+git add .
+ git status
+git commit -m "file added"
+git push -u origin master
 
 
 
