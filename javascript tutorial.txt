@@ -1,0 +1,167 @@
+create a folder in file explorer
+open it in vs 
+create a folder javascript
+create a variable.html file
+type html chose 2 one
+inside head write script we write all the code inside this only
+ var myName = "Your name";
+        console.log(myName);
+golive click
+website > rightclick> inspect >consol
+# inside the terminal
+node -v 
+PS C:\Users\Dell Latitude 7410\javascript tutorial> npx create-react-app app
+# react router for 
+localhost:8080/home->homepage
+localhost:8080/about->aboutpage
+
+# to implement the routing in our vs
+npm install react-router-dom # always need this!
+# config 
+const router = createBrowserRouter([{"path":"home",element:<Home/>},{"path":"about",element:<About/>}
+]);
+
+# to check react app 
+cd app
+ls
+see for package.jason
+npm install react-router-dom 
+
+create 2 file in app > src>  folder(Home.js, About.js)
+function Home(){
+    return(
+        <h1>
+        this is homepage
+        </h1>
+    )
+};
+
+export default Home;
+
+function About(){
+    return(
+        <h1>
+        this is homepage
+        </h1>
+    )
+};
+
+export default About;
+
+now open app.js  12 th line before fn app()
+const config = createBrowserRouter([
+  {path:"/home",element: <Home/>},
+  {path:"/about",element: <About/>}
+]);
+
+3,4,5
+import Home from './Home';
+import {createBrowserRouter,RouterProvider} from 'react-router-dom';
+import {About} from './About';
+
+code:
+App.js
+import './App.css';
+import Home from './Home';
+import About from './About';
+
+
+
+function App() {
+  const getUser=async()=>{
+    let res=await fetch('https://reqres.in/api/users/2');
+    let serverres=await res.json();
+    console.log(serverres['data']);
+  }
+  return (
+    <div>
+      <Home/>
+      <About/>
+      <button onClick={getUser}>Click to get user list</button>
+    </div>
+  );
+}
+
+export default App;
+
+
+Home.js
+function Home(){
+    return(
+        <h1>this is home page</h1>
+    )
+};
+export default Home;
+
+About.js
+function About(){
+    return(
+        <h1>this is About page</h1>
+    )
+};
+export default About;
+
+
+
+
+8.8.24
+<!-- comments in html
+     inline element   width of the content only taken can only contain inline element
+     block element   takes the full width even though the content is small can contain both inline and block ele
+     inline into a block and viceversa be changed
+     <form>tags => action , method 
+        action = send data to server
+        method = 
+    -->
+we can send to server without form tag using javascript 
+<select> tage to display drop down
+<option >tage will display our choices
+<option>tag has value properties/attrikbutes which is used to 
+<input type="submit"> will send our input to server
+<a> anchor tag =
+<li>list
+<ol> ordered <ul> unorded
+#all gives the same output
+<header>  
+<section>
+<footer>
+<div> inside this we can a section
+
+<video controls>
+    <!-- to increase, decrease volumn, pause, start, resume then only our video will
+    have those controls-->
+    <source src="video url"/> 
+     <!-- we need mp4 vedio to use youtube video-->
+</video>
+<audio controls>
+    <!-- to increase, decrease volumn, pause, start, resume then only our audio will
+    have those controls-->
+    <source src="audio url"/> 
+     <!-- we need mp3 audio -->
+</audio>
+developer tool> in a html write a h1 and inspect > elements> go change the text
+it will reflect on the web page when we refresh but this is only temporary
+
+attributes:
+
+class    it can have n no of classes for a particular element
+many elements can have same class name 
+id     identity and unique for an element 
+each element must have unique id 
+<div id ="olo">
+<div id= "jai">
+<p> has next line space
+<article> will not have newline space and continue in nextline
+text area resizeable can type multiple lines
+input box not resizable can type only one line
+
+
+
+
+
+
+
+
+
+
+
