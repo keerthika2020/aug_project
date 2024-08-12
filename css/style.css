@@ -1,0 +1,72 @@
+h1{
+    background-color: rgb(246, 12, 12);
+}
+.div1 h1{
+    background-color: rgb(30, 255, 221);
+}
+h2{
+color:pink ;
+}
+.s1 h2{
+color: rgb(245, 140, 43);
+}
+.menu{
+display: flex;
+list-style-type: none;   
+flex-direction: row;
+}
+.menu li{
+margin: 5px;
+}
+.active{
+background-color: aqua;
+}
+.align{
+    text-align: center;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+}
+.content div{
+    width: 90%;
+    height: 100%;
+    border: 1px solid #000;
+    
+}
+.content div img{
+    border: 1px solid #d63232;
+    border-radius: 4px;
+    object-fit: cover;
+    width: 35%;
+}
+
+@media only screen and (max-width:600px){
+    .menu{
+        flex-direction: column;
+    }
+    body{
+        background-color: beige;
+
+    }
+    
+}
+a:hover{
+    color: blue;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

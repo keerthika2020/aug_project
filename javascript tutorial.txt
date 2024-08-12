@@ -145,8 +145,8 @@ it will reflect on the web page when we refresh but this is only temporary
 attributes:
 
 class    it can have n no of classes for a particular element
-many elements can have same class name 
-id     identity and unique for an element 
+many elements can have same class name and can have duplicate . for class name
+id     identity and unique for an element # for id
 each element must have unique id 
 <div id ="olo">
 <div id= "jai">
@@ -167,6 +167,61 @@ git add .
  git status
 git commit -m "file added"
 git push -u origin master
+
+# day 4 12/8/24
+visibility hidden just hids the element but keeps the space occupied by the element
+display none removes element along with its space
+both hids elements
+flex direction either horiz or verti according to the device like lap and mobile ie row and col
+display flex
+class    it can have n no of classes for a particular element
+many elements can have same class name and can have duplicate . for class name
+id     identity and unique for an element # for id
+each element must have unique id 
+tag name: use css properties
+parent and child selector:
+property override to find error
+ <style>
+    h1{
+                background-color: red;
+            }
+    .div1 h1{
+                background-color: rgb(30, 255, 221);
+            }
+    h2{
+        color:pink ;
+    }
+    .s1 h2{
+        color: blue;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="div1">
+       <h1>barath </h1> 
+    </div>
+    <div class="div2">
+        <h1>
+            zindabad
+        </h1>
+    </div>
+    <section class="s1">
+        <h2>jai ho</h2>
+    </section>
+    <section class="s2">
+        <h2>keerthika</h2>
+    </section>
+</body>
+to change the list of items into horiz or vertical
+display in lineblock 
+display flex
+
+
+
+
+
+
 
 
 
