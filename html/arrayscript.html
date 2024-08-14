@@ -7,22 +7,52 @@
     <script>
         let name=['aaa','bbb','ccc',7,89,78,"kiki"];
         console.log(name);
-        // console.log(name[20]); gives undefined as op
-        //console.log(name[20].tolowerCase()); gives type error as op
-        // to get the index number
+        let str = name.filter((i)=>{
+            return typeof name[i] === 'string' && name[i].startsWith("k");
+            console.log(str);
+        })
         for(let index in name){
             //console.log(index, name[index]);
             if (typeof name[index] === 'string' && name[index].startsWith("k")) {
                 console.log(index, name[index]);
             }
         }
-        //function(){
-            //anonymus function that does not have a name
-       // }
-
+        
     </script>
 </head>
-<body>
-    
-</body>
+<body> </body>
+<script>
+    // find even number without loop
+    let digits = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+       console.log(digits);
+       let after_filter = digits.filter((i)=>{
+        return i%2 == 0;
+       });
+       console.log(after_filter);
+       // using map we can iterate each element and do manipulations on them
+       let after_map = digits.map((i)=>{
+        return i * 2 ;
+       })
+       console.log(after_map);
+       // to find even no and * em by 2
+       let evno = digits.filter((i)=>{ return i%2 == 0 }).map((i)=>{ return i * 2 })
+       console.log(evno);
+      
+
+
+
+
+
+
+</script>
+
+
+
+
 </html>
+<!--// console.log(name[20]); gives undefined as op
+        //console.log(name[20].tolowerCase()); gives type error as op
+        // to get the index number 
+        //function(){
+            //anonymus function that does not have a name
+       // }-->

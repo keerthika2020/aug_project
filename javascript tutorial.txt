@@ -228,6 +228,85 @@ first head runs and then then the body will run and then script will run so we w
 event handling 
 onclick in the element
 
+day 6 14.08.24
+advanced js 
+es6 
+arrow fn or anonymus function
+function print(){
+}
+document.getElementById().addEventListner('click', () =>{
+})
+# the fn is called automatically without calling the print()
+example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function print(){
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id = "tid"/>
+    <button id = "bid">click</button></br></br>
+    <select id="fruits">
+        <option value="select">Select options</option>
+        <option value="Apple">Apple</option>
+        <option value="Mango">Mango</option>
+        <option value="Orange">Orange</option>
+        <option value="Grapes">Grapes</option>
+    </select>
+</body>
+<script>
+    document.getElementById("bid").addEventListener('click',()=>{
+        let val = document.getElementById("tid").value;
+        console.log(val);
+    })
+    // use this code or the below one 
+    //document.getElementById("fruits").addEventListener('change',()=>{
+       // let val1 = document.getElementById("fruits").value;
+        //console.log(val1)
+    //})
+    //access value and handle event 
+    document.getElementById("fruits").addEventListener('change',(e)=>{
+                console.log(e.target.value);
+    })
+</script>
+</html>
+
+es6 filter in javascript
+filter()= only works with array for iteration 
+filters based on cond
+map() // using map we can iterate each element and do manipulations on them
+goes through each and every element and do changes to the element
+both filter and map will create new array without modifying source array
+# chainning methods
+to filter even no and then multiply them by 2 
+perform server api integration in js
+using fetch method and then given 
+javascript promise: fn has to return something ie either success or failure instead of just execution
+we dont know when it'll return  promise will wait untill it gets a response 
+by default get method is taken if we didn't use fetch 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

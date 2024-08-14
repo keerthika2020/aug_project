@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <input type="text" placeholder="email" id="t1"/></br></br>
+    <input type="text" placeholder="password" id="t2"/></br></br>
+    <button onclick="getapi()">Getapi</button></br></br>
+    
+</body>
+<script>
+async function getapi (){
+      //  let data = {"name": "morpheus","job": "leader"}
+      let email = document.getElementById("t1").value;
+      let pass = document.getElementById("t2").value;
+      let data = {
+        "email":email,
+        "password":pass};
+    //public  url is given
+    let res = await fetch ("https://reqres.in/api/login",{"method": "POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
+    let json = await res.json();
+    console.log(json);
+    console.log(res);
+    }
+</script>
+</html>
