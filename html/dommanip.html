@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .red{
+        color: red;
+    }
+    .blue{
+        color: blue;
+    }
+    .idcol{
+        
+        border: 2px solid red;
+    }
+    .error-msg {
+            color: red;
+            font-size: 12px;
+            display: none; /* Hidden by default */
+        }
+    
+    </style>
+</head>
+<body>
+    <h1 id="h1id">this is a h1 tag</h1>
+    <button id = "redid">Red</button>
+    <button id = "blueid">Blue</button></br></br>
+    <input type="text" id = "tid"/>
+    <button id = "bid">click</button></br></br>
+    <span id="error-msg" class="error-msg">This field cannot be empty</span>
+    <!--<script>
+       
+        chgRed=()=>{
+            document.querySelector("#h1id").classList.add('red');
+            
+        }
+        document.querySelector("#redid").addEventListener("click",chgRed);
+        chgBlue=()=>{
+           
+            document.querySelector("#h1id").classList.add('blue');
+        }
+         
+        document.querySelector("#blueid").addEventListener("click",chgBlue);
+    </script>-->
+    <script>
+        var classH1 = document.querySelector("#h1id").classList;
+        chgRed=()=>{
+            classH1.add('red');
+            classH1.remove('blue');
+            
+        }
+        document.querySelector("#redid").addEventListener("click",chgRed);
+        chgBlue=()=>{
+            classH1.add('blue');
+            classH1.remove('red');
+            
+        }
+        document.querySelector("#blueid").addEventListener("click",chgBlue);
+        chgRedbord=()=>{
+            let val = document.getElementById("tid").value;
+            let errorMsg = document.getElementById("error-msg");
+            
+            if (val == "") {
+                tid.classList.add('idcol');
+                errorMsg.style.display = 'inline'; // Show the error message
+            } else {
+                tid.classList.remove('idcol');
+                errorMsg.style.display = 'none'; // Hide the error message
+            }
+        }
+
+        document.querySelector("#bid").addEventListener("click", chgRedbord);
+    </script></br></br>
+    
+    
+ 
+</body>
+</html>

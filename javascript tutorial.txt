@@ -217,8 +217,16 @@ to change the list of items into horiz or vertical
 display in lineblock 
 display flex
 
-
-
+day 5 13/08/24
+let var const differences
+javascript usecases
+let will not allow same variable names for two values 
+redeclaration is not posibble but updation is possible
+const  will not allow same variable names for two values 
+redeclaration and updation is not posibble  
+first head runs and then then the body will run and then script will run so we write script tag in body and not in head
+event handling 
+onclick in the element
 
 
 

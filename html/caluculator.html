@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id = "n1"/>
+<input type="text"  id = "n2"/></br></br>
+<input type="text"  id = "n3"/></br></br>
+<button onclick="calculate('add')">add</button></br></br>
+<button onclick="calculate('sub')">sub</button></br></br>
+<button onclick="calculate('mul')">mul</button></br></br>
+<button onclick="calculate('div')">div</button></br></br>
+<script>
+    function calculate(cal){
+            let a = parseFloat(document.getElementById("n1").value);
+            let b = parseFloat(document.getElementById("n2").value);
+            let result;
+            switch(cal){
+                    case 'add':
+                        result = a + b;
+                        break;
+                    case 'sub':
+                        result = a - b;
+                        break;
+                    case 'mul':
+                        result = a * b;
+                        break;
+                    case 'div':
+                        result = b !== 0 ? a / b : "Cannot divide by zero";
+                        break;
+                    default:
+                        result = "Unknown operation";
+            }
+
+        document.getElementById("n3").value = result;
+        
+    }
+</script>
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

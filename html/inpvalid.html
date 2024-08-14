@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .idcol {
+            border: 2px solid red;
+        }
+
+        .error-msg {
+            color: #d93025; /* Google's red color */
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            visibility: hidden; /* Initially hidden */
+        }
+
+        .error-msg.visible {
+            visibility: visible;
+        }
+
+      
+        .error-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            background-image: url('error icon.png'); /* Replace with your image URL */
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <title>Styled Error Message</title>
+</head>
+<body>
+    <div class="input-container">
+        <input type="text" id="tid" placeholder="Enter text here">
+        <span id="error-msg" class="error-msg">
+            <div class="error-icon"></div>
+            This field cannot be empty
+        </span>
+    </div>
+    <button id="bid">Submit</button>
+
+    <script>
+        const chgRedbord = () => {
+            let val = document.getElementById("tid").value.trim();
+            let tid = document.querySelector("#tid");
+            let errorMsg = document.getElementById("error-msg");
+            
+            if (val === "") {
+                tid.classList.add('idcol');
+                errorMsg.classList.add('visible'); // Show the error message
+            } else {
+                tid.classList.remove('idcol');
+                errorMsg.classList.remove('visible'); // Hide the error message
+            }
+        }
+
+        document.querySelector("#bid").addEventListener("click", chgRedbord);
+    </script>
+    <!--  .error-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            background-color: #d93025;
+            mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="%23ffffff"/></svg>') center / contain no-repeat;
+        }-->
+</body>
+</html>
