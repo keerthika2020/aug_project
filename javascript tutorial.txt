@@ -291,10 +291,22 @@ using fetch method and then given
 javascript promise: fn has to return something ie either success or failure instead of just execution
 we dont know when it'll return  promise will wait untill it gets a response 
 by default get method is taken if we didn't use fetch 
-
-
-
-
+whenever we use await we use async
+status code in api in javascript 
+100-199 information response
+200-299 successful responses
+300-399 redirection  messages
+400-499 server is fine but client side error occures
+500-599 internal server has some errors issues but your data is correct
+http :
+to integrate an api in http
+server team has to confirm this three 
+api url 
+the http method
+what type of data is shared 
+JSON.stringify to convert json file to json string
+when we use post method it is mandatory to tell the server that what type of data we are passing
+to the server by using http headers .
 
 
 
