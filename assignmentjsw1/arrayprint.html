@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <style>
+        .container {
+            background-color: papayawhip;
+            width: 40%;
+            padding: 20px;
+            margin-top: 10%;
+            margin-left: 30%;
+            text-align: center;
+        }
+        input {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="txt" placeholder="Input your value here" /><br><br>
+        <button onclick="submit()" id="btn">SUBMIT</button>
+    </div>
+    
+</body>
+<script>
+    let arr = [];
+    function submit (){
+        let input = document.getElementById("txt").value; 
+        
+        arr.push(input.trim());
+        console.log("ARRAY VALUES:", arr);
+        arr.map((item, index) => {
+                    console.log(`Array[${index}]: ${item}`);
+                });
+        document.getElementById("txt").value = "";
+    }
+    
+</script>
+</html>
