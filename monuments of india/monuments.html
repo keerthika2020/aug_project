@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallary images</title>
+    <style>
+         .container {
+            position: relative;
+            width: 60%;
+            margin: 20px auto;
+            background-color: #f0f0f0; 
+            padding: 20px;
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            overflow: hidden;
+        }
+        .containerhead{
+            position: relative;
+            width: 95%;
+            margin: 20px auto;
+            text-align: right;
+            background-color: #f0f0f0; 
+            padding: 20px;
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            overflow: hidden;
+        }
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .slide {
+            position: absolute;
+            width: 60%; 
+            height: auto;
+            transition: 0.5s ease;
+            display: block;
+            opacity: 0.3;
+        }
+
+        .container:hover .slide {
+            animation: slideAnimation 6s infinite;
+        }    
+     
+        .info {
+            width: 40%; 
+            padding: 10px;
+            color: white;
+            font-size: 16px ;
+            background-color: rgba(0, 0, 0, 0.6); 
+            position: absolute;
+            left: 60%; 
+            top: 10%;
+            transform: translateY(-50%);
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .det {
+            width: 40%; 
+            padding: 10px;
+            color: white;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.6); 
+            position: absolute;
+            left: 60%; 
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .container:hover .image {
+            opacity: 1;
+        }
+        .container:hover .info {
+            opacity: 0.5;
+        }
+        @keyframes slideAnimation {
+            0% { opacity: 1; }
+            33% { opacity: 0; }
+            66% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .container:hover .slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .container:hover .slide:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .container:hover .slide:nth-child(3) {
+            animation-delay: 4s;
+        }
+        .active{
+        background-color: rgb(79, 241, 241);
+       
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="containerhead">
+        <a class="active" href="home.html"> GO TO HOME </a>
+        </div>
+    <div class="container">
+       
+        <div class="info">Qutb-Minar</div>
+               <div class="det">Qutub Minar is the second tallest and 
+            ever attractive historical monument of India located in Delhi at Aurobindo Marg, Mehrauli.
+             It is built in unique architectural style using red sandstones and marble. 
+             It is considered that Mughals built this victory tower
+              to celebrate their victories over the Rajputs.</div>
+        
+            <div class="slideshow">
+            <img src="qutub-minar2.png" alt="Qutb Minar" class="slide">
+            <img src="Qutb-Minar.jpg" alt="Qutb Minar" class="slide">
+            <img src="qutubminar1.jpg" alt="Qutb Minar" class="slide">
+           
+            </div>
+            
+        
+    </div>
+
+    <div class="container">
+        <div class="info">Victoria Memorial</div>
+        <div class="det">One of the landmarks of Kolkata, 
+            Victoria Memorial is a grand British-era structure built entirely of white marble. 
+            Constructed in the Indo-Saracenic revivalist style, 
+            using a mix of British and Mughal elements, the memorial draws 
+            influences from Islamic, Venetian, Egyptian and Deccani styles.</div>
+        
+       
+        <div class="slideshow">
+            <img src="victoria-memorial-kolkata.jpg" alt="Victoria Memorial" class="slide">
+            <img src="victoria-memorial-kolkata1.jpg" alt="Victoria Memorial" class="slide">
+            <img src="victoria-memorial-kolkata2.jpg" alt="Victoria Memorial"  class="slide">
+            </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="info">Taj Mahal</div>
+        <div class="det">The Taj Mahal is an ivory-white marble mausoleum on the
+             south bank of the Yamuna river in the Indian city of Agra. 
+            It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned from 1628 to 1658), 
+            to house the tomb of his favourite wife, Mumtaz Mahal.</div>
+        
+        <div class="slideshow">
+            
+            <img src="Taj_Mahal1.png" alt="Taj Mahal" class="slide">
+            <img src="download.png" alt="Taj Mahal" class="slide">
+            <img src="Taj_Mahal_.png" alt="Taj Mahal"  class="slide">
+            </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="info">Gateway of India</div>
+        <div class="det">It served to allow entry and access to India. The Gateway of India is located 
+            on the waterfront at Apollo Bunder area at the end of Chhatrapati Shivaji Marg in South Mumbai 
+            and overlooks the Arabian Sea. 
+            The monument has also been referred to as the Taj Mahal of Mumbai, 
+            and is the city's top tourist attraction..</div>
+        
+        <div class="slideshow">
+            <img src="gateway.png" alt="Gateway of India"  class="slide">
+            <img src="gateway2.png" alt="Gateway of India"  class="slide">
+            <img src="gateway1.png" alt="Gateway of India"  class="slide">
+           
+            </div>
+       
+    </div>
+
+    <div class="container">
+        <div class="info">Virupaksha Temple</div>
+        <div class="det">Virupaksha Temple is the 7th century Shiva temple in Hampi,
+             Central Karnataka. Hampi is a UNESCO World Heritage Site. Lord Virupaksha,
+              also referred to as Pampapathi is the main deity in Virupaksha Temple.
+               Virupaksha Temple complex also houses shrines of Bhuvaneshwari and Vidyaranya.</div>
+        
+        <div class="slideshow">
+            <img src="heritage.png" alt="Heritage Site" class="slide">
+            <img src="virupaksha-temple-hampi.jpg" alt="Heritage Site"  class="slide">
+            <img src="virupaksha-temple-hampi2.jpg" alt="Heritage Site"class="slide">
+            </div>
+       
+    </div>
+
+    <div class="container">
+        <div class="info">Humayun's Tomb</div>
+        <div class="det">The tomb of Humayun, second Mughal Emperor of India, 
+            was built by his widow, Biga Begum (Hajji Begum), in 1569-70, 
+            14 years after his death, at a cost of 1.5 million rupees. 
+            The architect was Mirak Mirza Ghiyath. It was later used for 
+            the burial of various members of the ruling family and contains some 150 graves.</div>
+       
+        <div class="slideshow">
+            <img src="humayun-s-tomb-delhi.jpg" alt="Humayun's Tomb" class="slide">
+            <img src="humayun-s-tomb-delhi1.jpg" alt="Humayun's Tomb"  class="slide">
+            <img src="humayun-s-tomb-delhi2.jpg" alt="Humayun's Tomb" class="slide">
+            </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="info"> Hawa Mahal</div>
+        <div class="det">The Hawa Mahal is a five-storey building, 
+            and it is the tallest building in the world that has been built without a foundation. 
+            It has a curved architecture that leans at an 87 degree angle, 
+            and a pyramidal shape which has helped 
+            it stay erect for centuries. 
+            The Hawa Mahal is dedicated to Lord Krishna.</div>
+      
+        <div class="slideshow">
+            <img src="monuments.png" alt="Monuments"class="slide">
+            <img src="monuments1.png" alt="Monuments"  class="slide">
+            <img src="monuments2.png" alt="Monuments" class="slide">
+            </div>
+    </div>
+
+    <div class="container">
+        <div class="info">Red Fort</div>
+        <div class="det">The Red Fort Complex was built as the palace fort of Shahjahanabad- 
+            the new capital of the fifth Mughal Emperor of India, Shah Jahan. Named for
+             its massive enclosing walls of red sandstone, it is adjacent to an older fort, the Salimgarh, 
+            built by Islam Shah Suri in 1546, with which it forms the Red Fort Complex.</div>
+        
+        <div class="slideshow">
+            <img src="Red-Fort.jpg" alt="Red Fort" class="slide">
+            <img src="Red-Fort1.jpg" alt="Red Fort"  class="slide">
+            <img src="Red-Fort2.jpg" alt="Red Fort"  class="slide">
+            </div>
+               
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallary images</title>
+    <style>
+         .container {
+            position: relative;
+            width: 60%;
+            margin: 20px auto;
+            background-color: #f0f0f0; 
+            padding: 20px;
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            overflow: hidden;
+        }
+        .containerhead{
+            position: relative;
+            width: 95%;
+            margin: 20px auto;
+            text-align: right;
+            background-color: #f0f0f0; 
+            padding: 20px;
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            overflow: hidden;
+        }
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .slide {
+            position: absolute;
+            width: 60%; 
+            height: auto;
+            transition: 0.5s ease;
+            display: block;
+            opacity: 0.3;
+        }
+
+        .container:hover .slide {
+            animation: slideAnimation 6s infinite;
+        }    
+     
+        .info {
+            width: 40%; 
+            padding: 10px;
+            color: white;
+            font-size: 16px ;
+            background-color: rgba(0, 0, 0, 0.6); 
+            position: absolute;
+            left: 60%; 
+            top: 10%;
+            transform: translateY(-50%);
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .det {
+            width: 40%; 
+            padding: 10px;
+            color: white;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0.6); 
+            position: absolute;
+            left: 60%; 
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .container:hover .image {
+            opacity: 1;
+        }
+        .container:hover .info {
+            opacity: 0.5;
+        }
+        @keyframes slideAnimation {
+            0% { opacity: 1; }
+            33% { opacity: 0; }
+            66% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .container:hover .slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .container:hover .slide:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .container:hover .slide:nth-child(3) {
+            animation-delay: 4s;
+        }
+        .active{
+        background-color: rgb(79, 241, 241);
+       
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="containerhead">
+        <a class="active" href="home.html"> GO TO HOME </a>
+        </div>
+    <div class="container">
+       
+        <div class="info">Stuffed Toys</div>
+               <div class="det">Description: Soft and cuddly, stuffed toys are designed for comfort and companionship. Made from plush materials, they come in a variety of animal shapes and characters, perfect for snuggling and imaginative play.
+                Recommended Age: 0+ months (ensuring the toy is free of small parts for babies)</div>
+        
+            <div class="slideshow">
+            <img src="gallaryimg/stuffed.png" alt="stuffed" class="slide">
+            <img src="gallaryimg/stuffed1.png" alt="stuffed" class="slide">
+            <img src="gallaryimg/stuffed2.png" alt="stuffed" class="slide">
+           
+            </div>
+            
+        
+    </div>
+
+    <div class="container">
+        <div class="info">Teether Toy</div>
+        <div class="det">Description: Teether toys are crafted from safe, non-toxic materials designed to soothe babies' gums during the teething phase. They often come in fun shapes, textures, and colors to engage the child while providing relief.
+            Recommended Age: 3+ months</div>
+        
+       
+        <div class="slideshow">
+            <img src="gallaryimg/teether.png" alt="teether" class="slide">
+            <img src="gallaryimg/teether1.png" alt="teether" class="slide">
+            <img src="gallaryimg/teether2.png" alt="teether"  class="slide">
+            </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="info">Music Sound Toys</div>
+        <div class="det">Description: Music sound toys introduce children to melodies, rhythms, and various sounds. From simple rattles to interactive keyboards and musical animals, these toys promote auditory skills and sensory development.
+            Recommended Age: 6+ months (for simpler toys like rattles); 12+ months (for more interactive musical instruments)</div>
+        
+        <div class="slideshow">
+            
+            <img src="gallaryimg/music.png" alt="music" class="slide">
+            <img src="gallaryimg/music1.png" alt="music" class="slide">
+            <img src="gallaryimg/music2.png" alt="music"  class="slide">
+            </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="info"> Art and Clay Toys</div>
+        <div class="det">Description: Art and clay toys inspire creativity and fine motor skills. These include modeling clay sets, painting kits, and drawing boards that allow children to explore their artistic side while developing hand-eye coordination.
+            Recommended Age: 3+ years</div>
+        
+        <div class="slideshow">
+            <img src="gallaryimg/art.png" alt="art"  class="slide">
+            <img src="gallaryimg/art1.png" alt="art"  class="slide">
+            <img src="gallaryimg/art2.png" alt="art"  class="slide">
+           
+            </div>
+       
+    </div>
+
+    <div class="container">
+        <div class="info">Puzzle Toys</div>
+        <div class="det">Description: Puzzle toys challenge children's problem-solving abilities and cognitive development. From simple shape sorters for toddlers to more complex jigsaw puzzles for older children, these toys foster critical thinking and patience.
+            Recommended Age: 2+ years (for simple puzzles); 4+ years (for more complex puzzles)</div>
+        
+        <div class="slideshow">
+            <img src="gallaryimg/puzzle.png" alt="puzzle" class="slide">
+            <img src="gallaryimg/puzzle1.png" alt="puzzle"  class="slide">
+            <img src="gallaryimg/puzzle2.png" alt="puzzle"class="slide">
+            </div>
+       
+    </div>
+
+    <div class="container">
+        <div class="info"> Activity Toys</div>
+        <div class="det">Description: Activity jumper and walker toys help babies build leg strength and balance as they explore movement. Often featuring interactive buttons, lights, and sounds, these toys engage the child while promoting physical activity and motor skills.
+            Recommended Age: 6+ months for jumpers; 9+ months for walkers</div>
+       
+        <div class="slideshow">
+            <img src="gallaryimg/activity.png" alt="actvity" class="slide">
+            <img src="gallaryimg/activity1.png" alt="activity"  class="slide">
+            <img src="gallaryimg/activity2.png" alt="activity" class="slide">
+            </div>
+        
+    </div>
+</body>
+</html>

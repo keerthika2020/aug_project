@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact page</title>
+    <style>
+        .content {
+        margin: 5% 10%;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .contentnavi{
+        margin: 5% 10%;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        text-align: right;
+
+    }
+    .add{
+        display: flex; 
+        left : 70% ; 
+        background-color: antiquewhite;
+    }
+    .addpre{
+        margin-left: 35%;
+         margin-top: 10px; 
+         font-size: 1em;
+         color: #333;
+    }
+    .btn {
+            background-color: #04AA6D; 
+            border: none;
+            color: white;
+            padding: 8px 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 8px;}
+            .btncol {
+            background-color: white; 
+            color: black; 
+            border: 2px solid cyan;
+            }
+
+            .btn:hover {
+            background-color: cyan;
+            color: rgb(17, 16, 16);
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+    </style>
+</head>
+
+<body style="background-color: rgb(181, 245, 245);">
+    <header>
+        <div class="contentnavi">
+            <a class="active" href="home.html">home</a>  |
+            <a  class="active" href="about.html"> about us</a> 
+       </div>
+    </header>
+    <div class="content">
+        
+        <div class="add" ><h1 style="left: 10%; margin: 5px;"> CONTACT US:</h1>
+            <pre class="addpre">
+             ADDRESS :    NO: 56 , 7th kyal street
+                          Mugappair west, chennai- 37.
+
+             Email:       bibiplay@gmail.com
+
+             PHONE NUMBER : + 044 8988756459
+                            + 91 8927384748</pre>
+        </div>
+        <p>Make sure to contact us to know more or share any quries:</p>
+        
+        <h3> NAME</h3>
+        <input type="text" id="name" placeholder="Your Fullname" style="width: 350px;
+    height: 30px;"/>
+        <h3>PHONE NUMBER</h3>
+        <input type="number" id="pn" placeholder="Your Mobile number" style="width: 350px;
+    height: 30px;"/>
+        <h3> MAIL ID</h3>
+        <input type="email" id="email" placeholder="Your mail id" style="width: 350px;
+    height: 30px;"/>
+        <h3> MESSAGE</h3>
+        <textarea type="text" id="txt" placeholder="Type here.." style="width: 360px;
+    height: 95px;"></textarea> </br></br>
+    <button class="btn">SUBMIT</button>
+    
+
+    </div>
+    
+   
+</body>
+</html>
