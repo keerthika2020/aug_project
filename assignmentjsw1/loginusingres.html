@@ -7,12 +7,11 @@
     <style>
         .content {
             margin: 5% 10%;
-            background-color: rgb(235, 229, 208);
+            background-color: rgb(247, 245, 235);
             padding: 30px;
             border-radius: 10px;
-            margin-left: 23%;
-            width: 50%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            align-items: center;
             text-align: center;
         }
         .containerhead{
@@ -29,8 +28,7 @@
         .btn {
             background-color: #04AA6D; 
             border: none;
-            color: rgb(138, 219, 115);
-            width: 350px;
+            color: white;
             padding: 8px 8px;
             text-align: center;
             text-decoration: none;
@@ -41,7 +39,7 @@
             cursor: pointer;
             border-radius: 8px;}
             .btncol {
-            background-color:  white; 
+            background-color: white; 
             color: black; 
             border: 2px solid cyan;
             }
@@ -61,34 +59,33 @@
         <div class="container">
     </header>
     <div class="content">
-        <h1 style="color: rgb(29, 44, 244);">CREATE AN ACCOUNT </h1>
-        <h3> USER NAME</h3>
-        <input type="text" id="tn" placeholder="User name" style="width: 350px;
-    height: 30px;"/></br></br>
+        <h1 style="color: rgb(29, 44, 244);">LOGIN TO YOUR ACCOUNT </h1>
         <h3> MAIL ID</h3>
         <input type="email" id="t1" placeholder="Your mail id" style="width: 350px;
     height: 30px;"/></br></br>
         <h3> PASSWORD</h3>
         <input type="password" id="t2" placeholder="Your password" style="width: 350px;
-    height: 30px;"/></br></br>
-    
-        <button onclick="getapi()" class="btn btncol">REGISTER</button></br></br>
-        <h2>Aldready having an account ?  <a href="login.html">Login </a></h2> 
-       
-        
-
+    height: 30px;" id="t2"/></br></br>
+        <button class="btn btncol" onclick="getapi()">LOGIN</button></br></br>
+        <h2>Did n't have an account? <a href="registerusingres.html">Sign up </a></h2></h2>
 
     </div>
     
 </body>
 <script>
     async function getapi (){
-          let uname = document.getElementById("tn").value;
+         
           let email = document.getElementById("t1").value;
           let pass = document.getElementById("t2").value;
-        console.log("User Name:",uname);
-        console.log("Email ID:", email);
-        console.log("Password:", pass);
+          console.log("Email ID:", email);
+          console.log("Password:", pass);
+          let data = {
+            "email":email,
+            "password":pass};
+        let res = await fetch ("https://reqres.in/api/login",{"method": "POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
+        let json = await res.json();
+        console.log(json);
+        console.log(res);
         }
     </script>
 </html>

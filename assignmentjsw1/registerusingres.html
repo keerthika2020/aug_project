@@ -29,8 +29,7 @@
         .btn {
             background-color: #04AA6D; 
             border: none;
-            color: rgb(138, 219, 115);
-            width: 350px;
+            color: white;
             padding: 8px 8px;
             text-align: center;
             text-decoration: none;
@@ -41,7 +40,7 @@
             cursor: pointer;
             border-radius: 8px;}
             .btncol {
-            background-color:  white; 
+            background-color: white; 
             color: black; 
             border: 2px solid cyan;
             }
@@ -72,10 +71,8 @@
         <input type="password" id="t2" placeholder="Your password" style="width: 350px;
     height: 30px;"/></br></br>
     
-        <button onclick="getapi()" class="btn btncol">REGISTER</button></br></br>
-        <h2>Aldready having an account ?  <a href="login.html">Login </a></h2> 
-       
-        
+        <button class="btn btncol" onclick="getapi()">REGISTER</button></br></br>
+        <h2>Aldready having an account ?  <a href="loginusingres.html">Sign in </a></h2></h2>
 
 
     </div>
@@ -83,12 +80,22 @@
 </body>
 <script>
     async function getapi (){
-          let uname = document.getElementById("tn").value;
-          let email = document.getElementById("t1").value;
-          let pass = document.getElementById("t2").value;
-        console.log("User Name:",uname);
-        console.log("Email ID:", email);
-        console.log("Password:", pass);
+          
+            let uname = document.getElementById("tn").value;
+            let email = document.getElementById("t1").value;
+            let pass = document.getElementById("t2").value;
+            console.log("User Name:",uname);
+            console.log("Email ID:", email);
+            console.log("Password:", pass);
+            let data = {
+                "username": uname,
+                "email":email,
+                "password":pass};
+            
+            let res = await fetch ("https://reqres.in/api/register",{"method": "POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
+            let json = await res.json();
+            console.log(json);
+            console.log(res);
         }
     </script>
 </html>

@@ -29,6 +29,7 @@
             background-color: #04AA6D; 
             border: none;
             color: white;
+            width: 350px;
             padding: 8px 8px;
             text-align: center;
             text-decoration: none;
@@ -66,29 +67,20 @@
         <h3> PASSWORD</h3>
         <input type="password" id="t2" placeholder="Your password" style="width: 350px;
     height: 30px;" id="t2"/></br></br>
-        <button onclick="getapi()">LOGIN</button></br></br>
-        <h2>New User ?</h2>
-        <button class="btn btncol"  onclick="location.href='register.html'">Register</button>
+        <button onclick="getapi()" class="btn btncol">LOGIN</button></br></br>
+        <h2>Did n't have an account? <a href="register.html">Sign up </a></h2></h2>
+        
 
     </div>
     
 </body>
 <script>
     async function getapi (){
-          //  let data = {"name": "morpheus","job": "leader"}
           let email = document.getElementById("t1").value;
           let pass = document.getElementById("t2").value;
-           // Log the email and password to the console
         console.log("Email ID:", email);
         console.log("Password:", pass);
-          let data = {
-            "email":email,
-            "password":pass};
-        //public  url is given
-        let res = await fetch ("https://reqres.in/api/login",{"method": "POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
-        let json = await res.json();
-        console.log(json);
-        console.log(res);
+       
         }
     </script>
 </html>
