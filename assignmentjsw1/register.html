@@ -51,6 +51,47 @@
             color: rgb(17, 16, 16);
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             }
+            #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+        }
+
+        #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+        }
     </style>
 </head>
 <body>
@@ -71,7 +112,7 @@
         <h3> PASSWORD</h3>
         <input type="password" id="t2" placeholder="Your password" style="width: 350px;
     height: 30px;"/></br></br>
-    
+        <div id="snackbar">REGISTERED SUCCESSFULLY</div>
         <button onclick="getapi()" class="btn btncol">REGISTER</button></br></br>
         <h2>Aldready having an account ?  <a href="login.html">Login </a></h2> 
        
@@ -86,6 +127,9 @@
           let uname = document.getElementById("tn").value;
           let email = document.getElementById("t1").value;
           let pass = document.getElementById("t2").value;
+          var x = document.getElementById("snackbar");
+          x.className = "show";
+          setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         console.log("User Name:",uname);
         console.log("Email ID:", email);
         console.log("Password:", pass);

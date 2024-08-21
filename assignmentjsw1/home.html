@@ -61,7 +61,26 @@
         .menu li{
         margin: 5px;
         justify-content: space-around;      
+       }
+       .menu li a {          
+            text-decoration: none; 
+            color: black;
+            padding: 5px 5px;
+            border-radius: 8px; 
+            display: inline-block; 
+            transition: background-color 0.3s, color 0.3s; 
+            
         }
+
+       
+        .menu li a:hover {
+            background-color: cyan;
+            color: rgb(5, 5, 5); 
+        text-decoration: none; 
+        
+    }
+
+
         .active{
         background-color:  #68d8fa; 
         }
@@ -81,10 +100,7 @@
             }
             
         }
-        a:hover{
-            color: blue;
-            text-decoration: none;
-        }
+        
         .btn {
             background-color: #04AA6D; 
             border: none;

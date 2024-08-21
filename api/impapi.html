@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>implement api </title>
+</head>
+<body>
+    <h1> implememt api and get the first name and email of the reqres website user </h1>
+</body>
+<script>
+    async function getapi (){
+         
+        let res = await fetch ("https://reqres.in/api/users",{"method": "GET"});
+        let json = await res.json();
+        for (let i in json['data']){
+            console.log(json['data'][i]['first_name']);
+            console.log(json['data'][i]['email']);
+        }
+        }
+getapi();
+    </script>
+</html>

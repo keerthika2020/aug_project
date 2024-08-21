@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Pronunciation Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Fallback if video isn't supported */
+        }
+        
+        /* Background video */
+        video.background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -1; /* Behind content */
+            object-fit: cover;
+        }
+
+        /* Container for content */
+        .container {
+            width: 60%;
+            margin-top: 10%;
+            margin-left: 3%;
+            background-color: rgba(255, 228, 196, 0.8); /* Bisque with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        input[type="text"], button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- Background video -->
+    <video autoplay muted loop class="background-video">
+        <source src="vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Content -->
+    <div class="container">
+        <h1>Speech Pronunciation</h1>
+        <input type="text" id="textInput" placeholder="Enter text for pronunciation">
+        <button onclick="generatePronunciation()">Pronounce</button>
+    </div>
+
+    <script>
+        async function generatePronunciation() {
+            const text = document.getElementById('textInput').value;
+            if (text.trim() === '') {
+                alert('Please enter text for pronunciation.');
+                return;
+            }
+
+            // Optionally, you can integrate text-to-speech (TTS) functionality
+            const speechSynthesisUtterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(speechSynthesisUtterance);
+        }
+    </script>
+</body>
+</html>

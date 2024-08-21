@@ -160,7 +160,7 @@ git add .
 git commit -m "initial commit"
 git config --global user.email "keerthika.r2122@gmail.com"
 git config --global user.name "keerthika"
-give the code in your git hub code
+give the code in your git hub code 
 git push -u origin master
 # if you add a file then do this
 git add .
@@ -335,15 +335,50 @@ file upload is done with post method coz of file size limations in get method
 but using get we can send string 
 by default the browser points to get only
 
+Day 7  21/08/24
+objct array have key and value pairs
+key must be unique  and value can be duplicate
+object into the index array or vice versa
+json['data']  = > the reqres server has stored that data
 
+These below storages are in client side 
+we can see these two storage in our google browser inspect> application> storage
+local storage and sessoion storage both have data stored in the web browser
+ls data is permanent in user system unless they uninstall or delete the data
+ google mail is automatically loged in coz token is created when we log for first time and stored in local 
+if log in again it checks the token and logs in automatically
+ss data is deleted whenever the user closes the browser or a tab
+for secured based applications 
+net banking websites use ss coz log in netbanking the session is closed when we come out of the website
+cookie 
+u search in amazon but google will give you ads related to the search
+how it know its you and how it give you the ads when u search amazon
+answer is the cookies.... but how????
+when we access google and go to incognito 
+it creates a unique no for you device
+what search is done it's unique id is stored in the google browser and according to the id it shows the ads to u
+actual value will be availabel in the db which is corresponding to the cookie id 
+why use cookie instead of local storage?
+the data in cookie is directly accessible form the server
+but if we use local storage the data can only be stored using javascript
 
-
-
-
-
-
-
-
+React js
+node package manager = > open source , can be contributed by anyone , can install necessary libraries for our node projects 
+1)	set up a react project:
+new version
+npx create-react-app appname
+always tries to connect to the internet to downloads and sets up a project everytime
+old version
+npm create-react-app appname
+install the lib and further no need to connect to the internet 
+2) cd myapp
+3) npm start
+4) public is accessible to all , src work on it  ,
+ .gitignore files we dont want to track in github 
+package.json what lib we mentioned in project only name and version number 0.1.0 => production.build.localbuild (stage of developement)
+standard of coding  => eslist config  readme is the description of our project.
+packge.lock.jason contains details of where to download the lib form where
+5) micro frontend ??
 
 
 
