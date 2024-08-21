@@ -70,14 +70,14 @@
 <script>
     async function getapi (){
          
-          let email = document.getElementById("t1").value;
+        let email = 'eve.holt@reqres.in' ;
           let pass = document.getElementById("t2").value;
           console.log("Email ID:", email);
           console.log("Password:", pass);
           let data = {
             "email":email,
             "password":pass};
-        let res = await  fetch('https://reqres.in/api/users',{"method": "POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
+        let res = await fetch ("https://reqres.in/api/login",{"method": "POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
         let json = await res.json();
         console.log(json);
         console.log(res);

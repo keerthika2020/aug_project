@@ -66,7 +66,7 @@
         <input type="password" id="t2" placeholder="Your password" style="width: 350px;
     height: 30px;"/></br></br>
     
-        <button class="btn btncol" onclick="getapi()">REGISTER</button></br></br>
+        <button class="btn btncol" onclick="registerUser()">REGISTER</button></br></br>
         <h2>Aldready having an account ?  <a href="task2login.html">Sign in </a></h2></h2>
 
 
@@ -74,20 +74,23 @@
     
 </body>
 <script>
-    async function getapi (){
-          
+   async function registerUser(event) {
+           
             let uname = document.getElementById("tn").value;
-            let email = document.getElementById("t1").value;
+            let email = 'eve.holt@reqres.in' ;
             let pass = document.getElementById("t2").value;
             console.log("User Name:",uname);
             console.log("Email ID:", email);
             console.log("Password:", pass);
             let data = {
-                "username": uname,
                 "email":email,
                 "password":pass};
             
-            let res = await  fetch('https://reqres.in/api/users',{"method": "POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
+                let res = await fetch("https://reqres.in/api/register", {
+                    "method": "POST",
+                    "body": JSON.stringify(data),
+                    "headers": {
+                        "Content-Type": "application/json"}});
             let json = await res.json();
             console.log(json);
             console.log(res);
