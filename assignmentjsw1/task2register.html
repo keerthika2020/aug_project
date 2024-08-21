@@ -53,12 +53,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="containerhead">
-            <a class="active" href="home.html"> GO TO HOME </a>
-            </div>
-        <div class="container">
-    </header>
+    
     <div class="content">
         <h1 style="color: rgb(29, 44, 244);">CREATE AN ACCOUNT </h1>
         <h3> USER NAME</h3>
@@ -92,7 +87,7 @@
                 "email":email,
                 "password":pass};
             
-            let res = await fetch ("https://reqres.in/api/register",{"method": "POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
+            let res = await  fetch('https://reqres.in/api/users',{"method": "POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
             let json = await res.json();
             console.log(json);
             console.log(res);

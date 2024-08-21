@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>magazine</title>
+    <style>
+        .cont {
+            display: flex;
+            flex-wrap: nowrap;
+            position: relative;
+            width: 100%;
+            height: 45%;
+            margin: auto;
+            background-color: white; 
+            justify-content:space-evenly;
+            padding: 5px;
+            border-radius: 5px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu {
+            display: flex;
+            margin-left: 20%;
+            list-style-type: none;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            color: rgb(17, 17, 18);
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            align-items: center; 
+            justify-content: space-between; 
+            width: 100%;
+            height: 200px;
+            margin: auto;
+            background-color: #f8e749;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .container img {
+            max-width: 150px; 
+            height: auto;    
+            border-radius: 5px;
+        }
+
+        .txt {
+            width: 60%; 
+            padding-left: 20px;
+            text-align: center;
+        }
+        .imgsec{
+            display: flex;
+            margin: auto;
+            list-style-type: none;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="cont">
+        <h2 style="color: rgb(75, 195, 235);">MAGAZINE</h2>
+        <ul class="menu">
+            <li><a href="news.html"><h2>NEWS</h2></a></li>
+            <li><a href="art.html"><h2>ART</h2></a></li>
+            <li><a href="design.html"><h2>DESIGN</h2></a></li>
+            <li><a href="culture.html"><h2>CULTURE</h2></a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <img src="moon.jpg">
+        <div class="txt">
+            <h2>Contemporary art:</h2>
+            <p> This is an example of magazine code. Your text is properly contained here.</p>
+        </div>
+    </div>
+    <div class="imgsec">
+        <div>
+            <img src="moon.jpg" style="border-radius: 50%;  width: 10%; height: 10%; padding: 5%;">
+            <img src="moon.jpg" style="border-radius: 50%; width: 10%; height: 10%;  padding: 5%;" >
+            <img src="moon.jpg" style="border-radius: 50%;width: 10%; height: 10%;  padding: 5%; ">
+        </div>     
+
+    </div>
+
+   
+
+</body>
+</html>

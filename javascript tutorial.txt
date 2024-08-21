@@ -308,7 +308,32 @@ JSON.stringify to convert json file to json string
 when we use post method it is mandatory to tell the server that what type of data we are passing
 to the server by using http headers .
 
-
+day 6 20/8/24
+server has our data so we need api to get the data
+rest api that gets data from the server and gives back to the client 
+server url , http method , data we pass --------> 3 main things
+every server has a unique domain name to reach the server we must give the domain name.
+api can be triggered from the applications that are connect to the internet
+just by calling the fn we can not get the result since it takes some time so we use promise 
+thread parallely running process in javascript we have promise simillar to thread
+promises will wait till the action is completed when we don't know how much time our task gets complete
+fetch method is buit based on the promise concept---> if the server takes 1 min to reply it'll wait for 1 min
+await is a keyword that will halt/pause our code to get executed
+http method:
+get 
+post
+put
+delete
+patch 
+get => going to get the data from the server
+what data ur passing in the get method , will be visible in the url ie the data always be public  
+ it is limited ie we can only send limited character to get method
+post=> send the data to the server
+the data is not visible ,  there is no limitaiton 
+this is why we sent username and password in post method coz of sensitive info in pass is protected by post
+file upload is done with post method coz of file size limations in get method
+but using get we can send string 
+by default the browser points to get only
 
 
 
