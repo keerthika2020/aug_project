@@ -379,6 +379,39 @@ package.json what lib we mentioned in project only name and version number 0.1.0
 standard of coding  => eslist config  readme is the description of our project.
 packge.lock.jason contains details of where to download the lib form where
 5) micro frontend ??
+DATE 7 22/08/24
+class name and component name must be same as the file name
+we have to give npm start everytime to run our react app
+myapp>src>rightclick>newfile>Home.js create
+this file can't be used for another file if we did not export 
+export is a javascript keyword that will export so that our fn/ var can be used outside the Home.js
+now if we use  <Home/> in our App.js it will print the Home component h1 in website
+{} data binding
+normal react cant use let anbd var since it is not updateable to avoid this react came up with a soltion
+state variable. => whenever we update the var the react will refresh updation automatically
+This should be written in fn :
+
+const [varname , setVar]= useState('your varname value');
+{varname}
+<p><input type='text' placeholder='email' onChange={(e) => setEmail(e.target.value)}/><br></br><br></br>
+      <input type='text' placeholder='mobile' onChange={(e) => setMobile(e.target.value)}/><br></br><br></br>
+      <button>Click</button></p>
+the( e ) is current element or event element
+getter , setters:
+ create a validation like text box is empty throw warning
+add html into js so priority goes to js inside the main fn define another fn validate the newly added fn should be above the return 
+const valid =()=> {
+    
+  }
+
+task 
+create new app
+new component =>  Login.js
+email pass on button click if empty alert mesg show
+
+
+
+
 
 
 

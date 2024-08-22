@@ -39,7 +39,7 @@
             z-index: 1;
         }
 
-        input[type="text"], button {
+        input[type="text"], button, select {
             padding: 10px;
             margin: 10px;
             font-size: 16px;
@@ -58,22 +58,63 @@
     <!-- Content -->
     <div class="container">
         <h1>Speech Pronunciation</h1>
-        <input type="text" id="textInput" placeholder="Enter text for pronunciation">
+        <input type="text" id="textInput" placeholder="Enter text for pronunciation"><br>
+        
+        <!-- Accent Selection -->
+        <select id="accentSelect">
+            <option value="">Select Accent</option>
+            <option value="en-GB">British</option>
+            <option value="en-US">American</option>
+            <option value="en-IN">Indian</option>
+        </select><br>
+        
         <button onclick="generatePronunciation()">Pronounce</button>
     </div>
 
     <script>
         async function generatePronunciation() {
             const text = document.getElementById('textInput').value;
+            const accent = document.getElementById('accentSelect').value;
+            
             if (text.trim() === '') {
                 alert('Please enter text for pronunciation.');
                 return;
             }
+            
+            if (accent === '') {
+                alert('Please select an accent.');
+                return;
+            }
 
-            // Optionally, you can integrate text-to-speech (TTS) functionality
-            const speechSynthesisUtterance = new SpeechSynthesisUtterance(text);
-            speechSynthesis.speak(speechSynthesisUtterance);
+            // Get the list of voices from the speech synthesis API
+            const voices = window.speechSynthesis.getVoices();
+            
+            // Find the selected accent's voice
+            const selectedVoice = voices.find(voice => voice.lang === accent);
+
+            if (selectedVoice) {
+                const speechSynthesisUtterance = new SpeechSynthesisUtterance(text);
+                speechSynthesisUtterance.voice = selectedVoice;
+                window.speechSynthesis.speak(speechSynthesisUtterance);
+            } else {
+                alert('Selected accent not supported by your browser.');
+            }
         }
+
+        // Make sure the voices are loaded before using them
+        window.speechSynthesis.onvoiceschanged = function() {
+            const accentSelect = document.getElementById('accentSelect');
+            const voices = window.speechSynthesis.getVoices();
+            
+            voices.forEach(voice => {
+                if (voice.lang.includes('en')) { // Limiting to English voices
+                    const option = document.createElement('option');
+                    option.value = voice.lang;
+                    option.textContent = `${voice.name} (${voice.lang})`;
+                    accentSelect.appendChild(option);
+                }
+            });
+        };
     </script>
 </body>
 </html>

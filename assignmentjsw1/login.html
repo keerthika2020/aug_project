@@ -125,6 +125,18 @@
           setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         console.log("Email ID:", email);
         console.log("Password:", pass);
+
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+        if (email === '' || pass === '') {
+            alert("All fields must be filled out.");
+            return false;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
        
         }
     </script>

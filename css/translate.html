@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .translator-container {
+            width: 60%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        textarea {
+            width: 45%;
+            height: 150px;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+            outline: none;
+            font-size: 16px;
+        }
+
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* CSS Effect: Slight hover grow effect */
+        textarea:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-color: #4CAF50;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="translator-container">
+        <h2>Translator</h2>
+        
+        <!-- Language selection and typing area -->
+        <div>
+            <select id="fromLang">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <!-- Add more languages as needed -->
+            </select>
+
+            <select id="toLang">
+                <option value="es">Spanish</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <!-- Add more languages as needed -->
+            </select>
+        </div>
+
+        <!-- Textareas -->
+        <div>
+            <textarea id="inputText" placeholder="Type text here..."></textarea>
+            <textarea id="translatedText" placeholder="Translation will appear here..." readonly></textarea>
+        </div>
+
+        <!-- Translate button -->
+        <button onclick="translateText()">Translate</button>
+    </div>
+
+    <script>
+        async function translateText() {
+            let fromLang = document.getElementById('fromLang').value;
+            let toLang = document.getElementById('toLang').value;
+            let inputText = document.getElementById('inputText').value;
+
+            // Ensure there's input to translate
+            if (inputText.trim() === '') {
+                alert('Please enter text to translate.');
+                return;
+            }
+
+            // Fetch the translation from LibreTranslate API
+            let response = await fetch("https://libretranslate.com/translate", {
+                method: "POST",
+                body: JSON.stringify({
+                    q: inputText,
+                    source: fromLang,
+                    target: toLang
+                }),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            // Parse the response to get the translated text
+            let json = await response.json();
+            document.getElementById('translatedText').value = json.translatedText;
+        }
+    </script>
+
+</body>
+</html>

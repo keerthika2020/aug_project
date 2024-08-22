@@ -93,11 +93,39 @@
         <h3> MESSAGE</h3>
         <textarea type="text" id="txt" placeholder="Type here.." style="width: 360px;
     height: 95px;"></textarea> </br></br>
-    <button class="btn">SUBMIT</button>
+    <button class="btn" onclick="return submit()">SUBMIT</button>
     
 
     </div>
     
    
 </body>
+<script>
+    function submit(){
+        let name = document.getElementById('name').value.trim();
+            let phone = document.getElementById('pn').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let message = document.getElementById('txt').value.trim();
+
+            let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+            if (name === '' || phone === '' || email === '' || message === '') {
+                alert("All fields must be filled out.");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (phone.length !== 10 || isNaN(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+
+            alert('Form submitted successfully!');
+            return true;
+        }
+</script>
 </html>
