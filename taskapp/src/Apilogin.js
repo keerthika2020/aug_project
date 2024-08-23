@@ -1,21 +1,9 @@
 
 import { useState } from 'react';
-export default async function Apilogin(){
+export default  function Apilogin(){
   const[email,setEmail] = useState('');
     const[password,setPass] = useState('');
-    let data = {
-      "email":"",
-      "password": ""
-    }
-    let response = await fetch("https://reqres.in/api/login",{"method":"POST",body:JSON.stringify(data),headers:{"content-type": "application/jason"}});
-    let userData = await response.json();
-    if(response.ok){
-        alert("you are correct");
-    }else{
-        alert("you are wrong");
-    }
-    console.log(userData);
-    const validate =()=> {
+    const validate =async()=> {
       
       if(email === ''){
         alert("please enter a email id");
@@ -24,7 +12,21 @@ export default async function Apilogin(){
       }else{
         alert("submitted successfully..");
       }
+      let data = {
+        "email":"",
+        "password": ""
+      }
+      let response = await fetch("https://reqres.in/api/login",{"method":"POST",body:JSON.stringify(data),headers:{"content-type": "application/json"}});
+      let userData = await response.json();
+      if(response.ok){
+          alert("you are correct");
+      }else{
+          alert("you are wrong");
+      }
+      console.log(userData);
 }
+   
+    
     
       
     

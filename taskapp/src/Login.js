@@ -20,7 +20,7 @@ export default function Login(){
       
       <p><input type='text' placeholder='email' onChange={(e) => setEmail(e.target.value)}/><br></br><br></br>
       <input type='text' placeholder='password' onChange={(e) => setPass(e.target.value)}/><br></br><br></br>
-      <button onClick={()=>validate()}>SUBMIT</button></p>
+      <button onClick={()=>validate()}>LOGIN</button></p>
     </div>
     )
 }
