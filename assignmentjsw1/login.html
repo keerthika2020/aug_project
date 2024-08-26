@@ -4,94 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <style>
-        .content {
-            margin: 5% 10%;
-            background-color: rgb(247, 245, 235);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            align-items: center;
-            text-align: center;
-        }
-        .containerhead{
-            position: relative;
-            width: 90%;
-            margin: 20px auto;
-            text-align: right;
-            background-color: #f0f0f0; 
-            padding: 20px;
-            border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-            overflow: hidden;
-        }
-        .btn {
-            background-color: #04AA6D; 
-            border: none;
-            color: white;
-            width: 350px;
-            padding: 8px 8px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 2px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-            border-radius: 8px;}
-            .btncol {
-            background-color: white; 
-            color: black; 
-            border: 2px solid cyan;
-            }
+    <link rel="stylesheet" href="mystyle.css">
 
-            .btn:hover {
-            background-color: cyan;
-            color: rgb(17, 16, 16);
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-            }
-            #snackbar {
-        visibility: hidden;
-        min-width: 250px;
-        margin-left: -125px;
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        border-radius: 2px;
-        padding: 16px;
-        position: fixed;
-        z-index: 1;
-        left: 50%;
-        bottom: 30px;
-        font-size: 17px;
-        }
-
-        #snackbar.show {
-        visibility: visible;
-        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        }
-
-        @-webkit-keyframes fadein {
-        from {bottom: 0; opacity: 0;} 
-        to {bottom: 30px; opacity: 1;}
-        }
-
-        @keyframes fadein {
-        from {bottom: 0; opacity: 0;}
-        to {bottom: 30px; opacity: 1;}
-        }
-
-        @-webkit-keyframes fadeout {
-        from {bottom: 30px; opacity: 1;} 
-        to {bottom: 0; opacity: 0;}
-        }
-
-        @keyframes fadeout {
-        from {bottom: 30px; opacity: 1;}
-        to {bottom: 0; opacity: 0;}
-        }
-    </style>
+    
 </head>
 <body>
     <header>
@@ -110,7 +25,7 @@
     height: 30px;" id="t2"/></br></br>
     <div id="snackbar">LOGIN SUCCESSFULL</div>
         <button onclick="getapi()" class="btn btncol">LOGIN</button></br></br>
-        <h2>Did n't have an account? <a href="register.html">Sign up </a></h2></h2>
+        <h4>Did n't have an account? <a href="register.html">Sign up </a></h4>
         
 
     </div>
