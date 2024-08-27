@@ -13,16 +13,24 @@ export default  function Apilogin(){
         alert("submitted successfully..");
       }
       let data = {
-        "email":"",
-        "password": ""
+        "email":"email",
+        "password": "password"
       }
-      let response = await fetch("https://reqres.in/api/login",{"method":"POST",body:JSON.stringify(data),headers:{"content-type": "application/json"}});
-      let userData = await response.json();
-      if(response.ok){
-          alert("you are correct");
-      }else{
-          alert("you are wrong");
-      }
+      let response = await fetch("https://reqres.in/api/login", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    let userData = await response.json();
+    if (response.ok && userData.token){
+        console.log("Logged in successfully!")
+    }else{
+        console.log("Login failed!")
+    }
+      
+      
       console.log(userData);
 }
    
