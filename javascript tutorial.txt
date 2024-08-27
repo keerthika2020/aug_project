@@ -409,7 +409,9 @@ create new app
 new component =>  Login.js
 email pass on button click if empty alert mesg show
 
-
+Day 8: 27.08.24
+in react to display in the webpage
+use state variable to print the value in the screen
 
 
 
