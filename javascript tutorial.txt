@@ -379,7 +379,7 @@ package.json what lib we mentioned in project only name and version number 0.1.0
 standard of coding  => eslist config  readme is the description of our project.
 packge.lock.jason contains details of where to download the lib form where
 5) micro frontend ??
-DATE 7 22/08/24
+DATE 8 22/08/24
 class name and component name must be same as the file name
 we have to give npm start everytime to run our react app
 myapp>src>rightclick>newfile>Home.js create
@@ -409,12 +409,75 @@ create new app
 new component =>  Login.js
 email pass on button click if empty alert mesg show
 
-Day 8: 27.08.24
+Day 9: 27.08.24
 in react to display in the webpage
-use state variable to print the value in the screen
+use state variable to print the value in the screen see for taskapp src register.js
+Day 10 28.08.2024
+create a new app reduxapp npx create-react-app reduxapp
+create 3 pages home about contanct.js files in  src
+and do the routing  npm i react-router-dom
+set up the router:
+since localhost:3000 has an empty end point so it gives an 404 error as we have configured for home , about , contact url 
+so we must inclulde any url like
+http://localhost:3000/About to display the about  page
+import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+
+let routerPaths = createBrowserRouter([
+{ path: "/", element: <Home /> },
+  { path: "/home", element: <Home /> },
+  { path: "/about", element: <About /> },
+  { path: "/contact", element: <Contact /> },
+]);
+
+function App() {
+  return (
+    <div className="App">
+      <RouterProvider router={routerPaths} />
+    </div>
+  );
+}
+
+export default App;
+
+to overcome this issue we use { path: "/", element: <Home /> }, inside the router var so that by default it opens to home page
+note :
+whenever we do render any page in another page like
+<Header></Header> 	give import statement
+import Header from "./Header";
+common state/store management : it is a common storage to share the variable of one page to another page to share data across the components
+we use redux to implement this concept
+context default lib comming from react this will also solve the problem but it comes from react 
+to do this we need to install the redux library  into our application:    npm install react-redux 
+the next one library to install is :     npm install @reduxjs/toolkit
+configuration : In src create a folder called redux inside it create a file called Config.js
+our entier app will be the children for the redux
+the configureStore is the common storage for our app.
+import { myStore } from './redux/Config';
+import {Provider} from 'react-redux';
+
+ <Provider store = {myStore}>  
+      <div className="App">
+    <RouterProvider router={routerPaths} />
+  </div>  
+   </Provider>
+configureStore creates a store and  inside that store we store out variable
+reducers are the logic we built
 
 
 
+
+
+
+
+
+
+Day 11 29.08.2024
+Day 12 30.08.2024
 
 
 
