@@ -467,6 +467,38 @@ import {Provider} from 'react-redux';
    </Provider>
 configureStore creates a store and  inside that store we store out variable
 reducers are the logic we built
+// state is the initial state ie my value will be this when my page is loaded
+//action whethere we are performing addition or subraction or any other operation ie this action is from 
++ or  - button 
+
+import {configureStore} from '@reduxjs/toolkit'
+import { Provider } from 'react-redux'
+
+const counterLogic = (state = 0, action) => {
+
+}
+
+export const myStore = configureStore({
+    reducer:{
+        "counter":counterLogic, //here counter is the store name
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
