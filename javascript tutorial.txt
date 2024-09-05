@@ -553,7 +553,7 @@ mongodb > database> browse collections
 click network access> add ip address> allow access from aywhere>confirm
 username , pass , url = unique for each
 mongodb+srv://keerthikar2122:<db_password>@cluster0.eyxks.mongodb.net/
-mongodb+srv://keerthikar2122:PCr8vleQx1NuWmUo@cluster0.eyxks.mongodb.net/
+change your password with the link 
  in vs code > terminaal> npm install mongodb
 create mongodb_connect.js file in the express folder
 google mongo db node> change url , dbName , collections='movies'
@@ -562,7 +562,7 @@ const { MongoClient } = require('mongodb');
 // import { MongoClient } from 'mongodb'
 
 // Connection URL
-const url = 'mongodb+srv://keerthikar2122:PCr8vleQx1NuWmUo@cluster0.eyxks.mongodb.net/';
+const url = 'give ur url';
 const client = new MongoClient(url);
 
 
@@ -592,7 +592,7 @@ const { MongoClient } = require('mongodb');
 // import { MongoClient } from 'mongodb'
 
 // Connection URL
-const url = 'mongodb+srv://keerthikar2122:PCr8vleQx1NuWmUo@cluster0.eyxks.mongodb.net/';
+const url = 'give your url/';
 const client = new MongoClient(url);
 // Database Name
 const dbName = 'office';
