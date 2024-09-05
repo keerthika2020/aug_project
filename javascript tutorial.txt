@@ -484,6 +484,137 @@ export const myStore = configureStore({
     }
 })
 
+					Day 11  29.08.2024
+download a folder from the given html 
+put it in public of the redux we will put code in the index.html form that folder to our home.js return()
+give the css link in the public > index.html
+inside the src >create a redux folder and create config.js in it 
+
+npm install react-router-dom
+npm install @reduxjs/toolkit
+npm i react-router-dom 
+ npm install react-redux
+npm install @reduxjs/toolkit react-redux
+					Day 12  02.09.2024
+created nodelecture folder and sample.js 
+to run the code
+node sample.js
+
+node js initially used as frontend  javascript compliler and later changed to server side compiling at backend 
+src should have a file called package.json then it is not considered 
+
+now create a folder called Express and do the following:
+npm init = to create a package json
+//express js library helps the framework will reduce the developement time than in node js
+npm install express
+create main.js file
+to tun the file in the terminal => node file.js
+Day 13 03/09/24
+localhost:8080/myname run it in chrome
+user gives req it goes to rest api then to the db the db will inturn respond with the response
+develope rest api :  previously we pass a req but now we have to catch and consume the req
+to check the api is working or not we post the localhost link localhost:8080/myname in post man and set the appropriate method
+app.get("/myname",(req,res)=> {
+res.json({"name":"KEERTHIKA.R"})
+}); //develope a get api
+app.post("/myname",(req,res)=> {
+    res.json({"age":"22"})
+    }); //develope a post api  => see in postman that this api is working or not 
+note : in post man check what you have given in the app.post must be in the local host link.
+localhost:8080/login 
+app.post("/login",(req,res)=> {
+    res.json({"msg":"Login success"})
+    });
+app.post("/login",(req,res)=> {
+        let email = req['query']['email'];
+        let password = req['query']['password'];
+        if(email == "kiki@gmail.com" && password == "kiki123"){
+            res.json({"msg":"you are correct"})
+        }else{
+            res.json({"msg":"you are wrong"})
+        }
+        console.log(email,password);
+        res.json({"msg":email})
+        });
+ node --watch main.js this command will run automatically and we  dont need to run manually
+deconstructive in javascript.
+req.query can be used in both get and post method in post man we use params
+req.body can only be used in  post method  adding it only once is enough  in post man we use body > select raw > inside the text pass our 
+object {"email":kiki@gmail.com,
+"name":"kiki"
+"password":lkaaf,
+"address","90,koiej street
+} but check to it that the params keys are unchecked and go to body
+we have to mention to the express that we are going to use this 
+var app = express();
+app.use(express.json()) ;// middleware function this should be added below the express() line
+Day 14 04/09/24
+mongodb > database> browse collections
+click network access> add ip address> allow access from aywhere>confirm
+username , pass , url = unique for each
+mongodb+srv://keerthikar2122:<db_password>@cluster0.eyxks.mongodb.net/
+mongodb+srv://keerthikar2122:PCr8vleQx1NuWmUo@cluster0.eyxks.mongodb.net/
+ in vs code > terminaal> npm install mongodb
+create mongodb_connect.js file in the express folder
+google mongo db node> change url , dbName , collections='movies'
+const { MongoClient } = require('mongodb');
+// or as an es module:
+// import { MongoClient } from 'mongodb'
+
+// Connection URL
+const url = 'mongodb+srv://keerthikar2122:PCr8vleQx1NuWmUo@cluster0.eyxks.mongodb.net/';
+const client = new MongoClient(url);
+
+
+// Database Name
+const dbName = 'sample_mflix';
+async function main() {
+    // Use connect method to connect to the server
+    await client.connect();
+    console.log('Connected successfully to server');
+    const db = client.db(dbName);
+     const data = await db.collection('movies').find({}).toArray();
+    console.log(data);
+  
+    // the following code examples can be pasted here...
+  
+    return 'done.';
+  }
+
+  main()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());
+create a database in mongodb office collection as employee
+and in vs code create a office.js file
+const { MongoClient } = require('mongodb');
+// or as an es module:
+// import { MongoClient } from 'mongodb'
+
+// Connection URL
+const url = 'mongodb+srv://keerthikar2122:PCr8vleQx1NuWmUo@cluster0.eyxks.mongodb.net/';
+const client = new MongoClient(url);
+// Database Name
+const dbName = 'office';
+
+async function insertData(){
+    let empData ={
+        "name":"keerthi",
+        "mobile":"9867234234",
+        "address":"mugappair",
+    }
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = await db.collection('employee');
+    await collection.insertOne(empData);
+    console.log('Record inserted');
+}
+
+insertData();
+
+now node office.js in terminal
+// create staff db teachers collectin
+raw json
 
 
 
@@ -492,29 +623,7 @@ export const myStore = configureStore({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Day 11 29.08.2024
-Day 12 30.08.2024
-
-
-
-
-
-
-
-
+Day 15 05/09/24
+Day 16 09/09/24
+Day 17 10/09/24
+Day 18 11/09/24
