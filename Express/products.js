@@ -41,29 +41,40 @@ app.get("/Prodlist",async(req,res)=>{
      //await client.close();
   
   })
+  //get prices
   app.get("/productprice/:price",async(req,res)=>{
  
     await client.connect();
     let {price} = req.params;
+    price = parseInt(price);
     let db = client.db(dbName);
     let list = await db.collection('products').find({"price":price}).toArray(); 
     res.status(200).json(list)
    // await client.close();
  
  })
- app.get("/productpricefilter/:minp/:maxp",async(req,res)=>{
+ app.get("/productpricefilter/:price",async(req,res)=>{
  
     await client.connect();
-    let {minp,maxp} = req.params;
-    //minp= parseInt(minp);
-    //maxp=parseInt(maxp);
-   
+    let {price} = req.params;
+    price =  parseInt(price);
     let db = client.db(dbName);
-    let list = await db.collection('products').find({"productprice":{$gte:minp,$lte:maxp}}).toArray(); 
-    res.status(200).json(list)
-   // await client.close();
+    let list = await db.collection('products').find({"productprice":{price}}).toArray(); 
+    if(list.price > 300){
+        res.status(200).json(list.price)
+    }else{
+        res.json({"msg":"max price is 300"})
+    }
  
  })
+ app.delete("/deleteProductByName",async(req,res)=>{
+    let {pname} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("products").deleteOne({"pname":pname})
+    res.json({"msg" :"product deleted"})
+ })
+
   // this line should be at the end of the code 
 app.listen(8081,() => {
     console.log("server started");
