@@ -22,6 +22,17 @@ app.post("/createTeacher",async(req,res)=>{
         'mobile':body['mobile'],
 
     }
+    // destructureng is also possible
+    //let{name,email,password,address,mobile} = req.body
+    /*let data = {
+        'name':'name',
+        'email':'email',
+        'password':'password',
+        'address':'address',
+        'mobile':'mobile'
+
+    }*/
+  
 
         await client.connect();
         let db = client.db(dbName);
@@ -30,8 +41,8 @@ app.post("/createTeacher",async(req,res)=>{
     
    
 })
-
-app.listen(8080,() => {
+// this line should be at the end of the code 
+app.listen(3000,() => {
     console.log("server started");
 });
 

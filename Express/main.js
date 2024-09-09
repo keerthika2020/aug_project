@@ -30,9 +30,7 @@ app.post("/login",(req,res)=> {
         console.log(email,password);
         res.json({"msg":email})
         });
-app.listen(8080,() => {
-    console.log("server started");
-});
+
 
 app.post("/register",(req,res) => {
     let{name,email,password,address} = req['query'];
@@ -78,7 +76,9 @@ app.post("/register",(req,res) => {
         res.status(200).json({"message":"Created a record"})
     })
 
-
+    app.listen(9000,() => {
+        console.log("server started");
+    });
 
 
 
