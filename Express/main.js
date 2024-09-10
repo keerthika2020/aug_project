@@ -75,7 +75,7 @@ app.post("/register",(req,res) => {
         await db.collection('teachers').insertOne(data);
         res.status(200).json({"message":"Created a record"})
     })
-
+    
     app.listen(9000,() => {
         console.log("server started");
     });

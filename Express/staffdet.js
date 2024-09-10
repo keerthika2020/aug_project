@@ -46,7 +46,13 @@ app.get("/Emplistnames/:name",async(req,res)=>{
  })
 
 
-
+ app.delete("/deleteEmpByName",async(req,res)=>{
+    let {name} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("employee").deleteOne({"name":name})
+    res.json({"msg" :"employee deleted"})
+ })
 
 
  app.get("/emplogin",async(req,res)=>{
@@ -64,6 +70,20 @@ app.get("/Emplistnames/:name",async(req,res)=>{
  
  
  })
+ app.put("/updateName",async(req,res)=>{
+    let {name,password} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("employee").updateOne( {"name":name},{$set:{"password": password}})
+    res.json({"msg" :"employee updated"})
+ })
+ //
+
+
+
+
+
+
 
 
 // this line should be at the end of the code 

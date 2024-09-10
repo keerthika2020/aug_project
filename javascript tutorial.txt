@@ -683,53 +683,50 @@ app.listen(3000,() => {
         "mobile": "8987670889"
     }
 ]
+
+
+// to filter the details of employess name using pathvariable can work with get and post
+app.get("/Emplistnames/:name",async(req,res)=>{
+
+    await client.connect();
+    let {name} = req.params;
+    let db = client.db(dbName);
+    let list = await db.collection('employee').find({"name":name}).toArray();
+    
+    res.status(200).json(list)
+ 
+ 
+ })
+In the postman link url give :
+http://localhost:8080/Emplistnames/rose
+
 major way of sending data from front end
 path var
 queryparam
 reqbody
 status code
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Day 16 09/09/24
+
+ app.delete("/deleteProductByName",async(req,res)=>{
+    let {pname} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("products").deleteOne({"pname":pname})
+    res.json({"msg" :"product deleted"})
+ })
+ app.put("/updateprice",async(req,res)=>{
+    let {pname,price} = req.query;
+    price = parseInt(price);
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("products").updateOne({"pname": pname} ,{$set:{"price":price}})
+    res.json({"msg" :"product updated"})
+ })
 Day 17 10/09/24
+if you have same name for 3 records  and have to update then :
+updateOne will update for first record
+updateMany will update all the 3 records 
+
+
+
 Day 18 11/09/24

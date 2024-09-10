@@ -4,7 +4,7 @@ var express = require("express")
 var app = express();
 app.use(express.json()); // middleware function
 
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 
 // or as an es module:
 // import { MongoClient } from 'mongodb'
@@ -53,16 +53,21 @@ app.get("/Prodlist",async(req,res)=>{
    // await client.close();
  
  })
- app.get("/productpricefilter/:price",async(req,res)=>{
+ app.get("/productpricefilter",async(req,res)=>{
  
     await client.connect();
-    let {price} = req.params;
     price =  parseInt(price);
     let db = client.db(dbName);
-    let list = await db.collection('products').find({"productprice":{price}}).toArray(); 
-    if(list.price > 300){
-        res.status(200).json(list.price)
-    }else{
+    var filterList = {};
+    let {price} = req.query;
+    if(price >= 300){
+        filterList['price'] = price; 
+        let list = await db.collection("products").find(filterList).toArray();
+        res.json(list);
+    }
+   
+       
+    else{
         res.json({"msg":"max price is 300"})
     }
  
@@ -71,8 +76,35 @@ app.get("/Prodlist",async(req,res)=>{
     let {pname} = req.query;
     await client.connect();
     let db = client.db(dbName);
-    await db.collection("products").deleteOne({"pname":pname})
+    await db.collection("products").deleteOne({"pname":pname});
     res.json({"msg" :"product deleted"})
+ })
+ app.put("/updateprice",async(req,res)=>{
+    let {pname,price} = req.query;
+    price = parseInt(price);
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("products").updateOne({"pname": pname} ,{$set:{"price":price}});
+    res.json({"msg" :"product updated"})
+ })
+
+ // instead of put use post and req.body and create an api
+ app.post("/updatePostprice",async(req,res)=>{
+    let {pname,price} = req.body;
+    price = parseInt(price);
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("products").updateOne({"pname": pname} ,{$set:{"price":price}});
+    res.json({"msg" :"product updated"})
+ })
+
+ //find the record based on id
+ app.get("/getById",async(req,res)=>{
+    let {id} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    let data = await db.collection("products").find({"_id":new ObjectId(id)}).toArray();
+    res.json(data);
  })
 
   // this line should be at the end of the code 
