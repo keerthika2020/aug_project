@@ -726,6 +726,12 @@ Day 17 10/09/24
 if you have same name for 3 records  and have to update then :
 updateOne will update for first record
 updateMany will update all the 3 records 
+ create 
+database: jobportal 
+collection: jobs
+empty folder job_portal in the terminal
+npm init
+npm i express mongodb
 
 
 
