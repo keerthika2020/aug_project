@@ -68,7 +68,7 @@ app.get("/Prodlist",async(req,res)=>{
    
        
     else{
-        res.json({"msg":"max price is 300"})
+        res.json({"msg":"max price is 300"});
     }
  
  })
@@ -77,7 +77,7 @@ app.get("/Prodlist",async(req,res)=>{
     await client.connect();
     let db = client.db(dbName);
     await db.collection("products").deleteOne({"pname":pname});
-    res.json({"msg" :"product deleted"})
+    res.json({"msg" :"product deleted"});
  })
  app.put("/updateprice",async(req,res)=>{
     let {pname,price} = req.query;
@@ -85,7 +85,7 @@ app.get("/Prodlist",async(req,res)=>{
     await client.connect();
     let db = client.db(dbName);
     await db.collection("products").updateOne({"pname": pname} ,{$set:{"price":price}});
-    res.json({"msg" :"product updated"})
+    res.json({"msg" :"product updated"});
  })
 
  // instead of put use post and req.body and create an api
@@ -106,7 +106,6 @@ app.get("/Prodlist",async(req,res)=>{
     let data = await db.collection("products").find({"_id":new ObjectId(id)}).toArray();
     res.json(data);
  })
-
   // this line should be at the end of the code 
 app.listen(8081,() => {
     console.log("server started");

@@ -548,12 +548,14 @@ object {"email":kiki@gmail.com,
 we have to mention to the express that we are going to use this 
 var app = express();
 app.use(express.json()) ;// middleware function this should be added below the express() line
+
 Day 14 04/09/24
 mongodb > database> browse collections
 click network access> add ip address> allow access from aywhere>confirm
 username , pass , url = unique for each
 mongodb+srv://keerthikar2122:<db_password>@cluster0.eyxks.mongodb.net/
 change your password with the link 
+
  in vs code > terminaal> npm install mongodb
 create mongodb_connect.js file in the express folder
 google mongo db node> change url , dbName , collections='movies'
@@ -732,7 +734,130 @@ collection: jobs
 empty folder job_portal in the terminal
 npm init
 npm i express mongodb
+					Day 18 11/09/24
+one vs express 8080 another react 3000
+create an backend express called job_portal in that terminal run these code
+ npm init
+npm install express
+npm install mongodb
+create Main.js file and do this 
+
+var exp = require("express") ;
+var app = exp();
+app.use(exp.json());
+// install cors in the express to avoid cors error
+var cors = require("cors");
+app.use(cors());
+//mongodb 
+const { MongoClient ,ObjectId} = require('mongodb');
+// Connection URL
+const url = 'mongodb+srv://keerthikar2122:PCr8vleQx1NuWmUo@cluster0.eyxks.mongodb.net/';
+const client = new MongoClient(url);
+
+// Database Name
+const dbName = 'jobportal';
+//create a job record
+app.post("/createJob",async(req,res)=>{
+    var {name,company_name,requirements} = req.body;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("jobs").insertOne({
+        "name":name,
+        "company_name":company_name,
+        "requirements":requirements
+    });
+    // to find a particular requirement from a name
+    //let a = await db.collection("jobs").findOne({"name":"Hasika.B"});
+    //console.log(a["requirements"][1]);
+    res.json({"msg":"job created"});
+   
+})
+// create many records at once.
+app.post("/createManyJob",async(req,res)=>{
+    await client.connect();
+   let db = client.db(dbName);
+   await db.collection('jobs').insertMany(req.body);
+   res.status(200).json({"message":"Created a record"});
+})
+// get job detail
+app.get("/jobslist",async(req,res)=>{
+    await client.connect();
+    let db = client.db(dbName);
+    let list = await db.collection('jobs').find({}).toArray();
+    res.status(200).json(list);
+ })
+ //get job details based on its name
+ app.get("/jobslistnames/:name",async(req,res)=>{
+    await client.connect();
+    let {name} = req.params;
+    let db = client.db(dbName);
+    let list = await db.collection('jobs').find({"name":name}).toArray();
+    res.status(200).json(list);
+ })
+ //find the record based on id
+app.get("/getJobsById",async(req,res)=>{
+    let {id} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    let data = await db.collection("jobs").find({"_id":new ObjectId(id)}).toArray();
+    res.json(data);
+ })
+ // delete job based on name
+ app.delete("/deleteJobsByName",async(req,res)=>{
+    let {name} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("jobs").deleteOne({"name":name});
+    res.json({"msg" :"Job deleted"});
+ })
+ //update job based on name
+ app.put("/updateJobsByName",async(req,res)=>{
+    let {name,requirements} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("jobs").updateOne( {"name":name},{$set:{"requirements": requirements}});
+    res.json({"msg" :"jobs updated"});
+ })
+app.listen(8080,()=>{
+    console.log("server started");
+})
+
+create an react front end application
+
+
+npx create-react-app jobsapp
+cd jobapp
+npm start
+backend install cors add this plugin in express
+npm i cors
+App.js 
+//to update ui with a dynamic data ie to print the output value in the webpage we need useState to store the data and display it in the webpage
+const [jobList,setJobList] = useState(); //creating a state var  
+setJobList(json) //displaying the state var
+{
+        jobList.map((obj,index)=>{
+            return(
+            <div key={index}>
+              <h2 >{obj.name}</h2>
+              <h2 >{obj.company_name}</h2>
+              <h2 >{obj.requirements}</h2>
+              </div>
+            )
+        })
+      }
+whenever we use map we need to use index this is called mapper
+
+					Day 19 12/09/24
+micro frontend :
+update and delete 
 
 
 
-Day 18 11/09/24
+
+
+
+
+
+
+
+
