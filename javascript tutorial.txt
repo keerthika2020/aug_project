@@ -849,14 +849,25 @@ whenever we use map we need to use index this is called mapper
 
 					Day 19 12/09/24
 micro frontend :
-update and delete 
+update and delete using react and express
+					Day 20 13/09/24
 
-
-
-
-
-
-
+tokens
+express : create login api password email post
+jwt node
+$ npm install jsonwebtoken
+cretate token by import library
+var jwt = require('jsonwebtoken');
+inside the api login
+var token = jwt.sign({ 'name':loginRes[0]['name'] }, 'secret');
+here secret is the private key when encode and decoding we must pass this key for validation
+gateway is optional in our application.// this is called middleware/interceptor
+res and req comes and goes through this middleware only
+in post man headers is used for all the http methods
+body is used for  post 
+query for others
+app.post("/login") --------> 
+app.post("/api/list_job") --------->
 
 
 

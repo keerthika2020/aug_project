@@ -9,6 +9,8 @@ function App() {
   const nameRef = useRef();
   const cnameRef = useRef();
   const rnameRef = useRef();
+  const emailRef= useRef();
+  const passwordRef = useRef();
 
   const createJob =async()=>{
     let requirementsArray = rnameRef.current.value.split(',').map(req => req.trim());
@@ -16,6 +18,8 @@ function App() {
       "name":nameRef.current.value,
       "company_name":cnameRef.current.value,
       "requirements":requirementsArray,
+      "email":emailRef.current.value,
+      "password":passwordRef.current.value,
     }
     let res = await fetch("http://localhost:8080/createJob",{method:"POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
     let json = await res.json();
@@ -45,6 +49,8 @@ function App() {
    nameRef.current.value = matchJob[0].name;
    cnameRef.current.value = matchJob[0].company_name;
    rnameRef.current.value = matchJob[0].requirements;
+   emailRef.current.value = matchJob[0].email;
+   passwordRef.current.value = matchJob[0].password;
   }
   const updateJob = async()=>{
     let data = {
@@ -52,6 +58,8 @@ function App() {
       "name":nameRef.current.value ,
       "company_name":cnameRef.current.value ,
       "requirements":rnameRef.current.value, 
+      "email":emailRef.current.value,
+      "password":passwordRef.current.value
     }
     let res = await fetch("http://localhost:8080/updateJobsById",{method:"POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
     let json = await res.json();
@@ -76,6 +84,8 @@ function App() {
               <h2 >{obj.name}</h2>
               <h4>{obj.company_name}</h4>
               <h4 >{obj.requirements}</h4>
+              <h4 >{obj.email}</h4>
+              <h4 >{obj.password}</h4>
               <button onClick={()=> deleteJob(obj._id)}>DeleteData</button>
               <button onClick={()=> loadDataForUpdate(obj._id)}>Update</button>
               </div>
@@ -87,6 +97,9 @@ function App() {
         <div><input type ="name"  placeholder="NAME"  ref={nameRef}></input></div><br></br>
         <div><input type ="name" placeholder="COMPANY NAME" ref={cnameRef}></input></div><br></br>
         <div><input type ="name" placeholder="REQ(comma-separated)" ref={rnameRef}></input></div><br></br>
+        <div><input type ="name" placeholder="Email" ref={emailRef}></input></div><br></br>
+        <div><input type ="name" placeholder="Password" ref={passwordRef}></input></div><br></br>
+       
         <div><input type ="button" value="Submit" onClick={createJob}></input></div>
         <button onClick={()=> updateJob()}>Update</button>
       </div>
