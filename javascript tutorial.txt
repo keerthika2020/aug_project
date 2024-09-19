@@ -869,6 +869,11 @@ query for others
 app.post("/login") --------> 
 app.post("/api/list_job") --------->
 
-
-
-
+				Day 21 18/09/24
+express file uplode for backend
+react file uplode for front end 
+npm i express-fileupload
+file upload is used only with post http method and not anyother.
+post man body formdata key img dropdown file 
+img file each time for multiple image upload
+array using forloop 

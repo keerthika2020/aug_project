@@ -6,13 +6,17 @@ function App() {
   //to update ui with a dynamic data ie to print the output value in the webpage we need useState to store the data and display it in the webpage
   const [jobList,setJobList] = useState([]);
   const [id,setId] = useState([]);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const nameRef = useRef();
   const cnameRef = useRef();
   const rnameRef = useRef();
   const emailRef= useRef();
   const passwordRef = useRef();
-
+ // Get token from localStorage or sessionStorage
+  const token = localStorage.getItem('token');
   const createJob =async()=>{
+    let token = localStorage.getItem("token")
     let requirementsArray = rnameRef.current.value.split(',').map(req => req.trim());
     let data = {
       "name":nameRef.current.value,
@@ -21,28 +25,48 @@ function App() {
       "email":emailRef.current.value,
       "password":passwordRef.current.value,
     }
-    let res = await fetch("http://localhost:8080/createJob",{method:"POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
+    let res = await fetch("http://localhost:8080/api/createJob",{method:"POST",body:JSON.stringify(data),headers:{"content-type":"application/json","token":token}});
     let json = await res.json();
 
     console.log(json);
     getData();
   }
+  const loginapi = async () => {
+    let data = {
+      "email": email,
+      "password": password,
+    };
+      let res = await fetch("http://localhost:8080/login",{method:"POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}})
+      if(res.ok){
+          let json = await res.json();
+          console.log(json);
+          // Store token received after job creation
+          localStorage.setItem('token', json.token);           
+          }else{
+          alert("login failed ");
+          }
+    
+  }
   const getData = async()=>{
-      let res = await fetch("http://localhost:8080/jobslist",{method:"GET"});
+    let token = localStorage.getItem("token")
+      let res = await fetch("http://localhost:8080/api/jobslist",{method:"GET",headers:{"content-type":"application/json","token":token}});
       let json = await res.json();
       console.log(json);
       setJobList(json);
 
   }
   const deleteJob = async(id)=>{
-    let res = await fetch("http://localhost:8080/deleteJobsById?id="+id,{"method":"delete"})
+    let token = localStorage.getItem("token")
+    let res = await fetch("http://localhost:8080/api/deleteJobsById?id="+id,{"method":"delete",headers:{"content-type":"application/json","token":token}})
     if(res.ok){
       alert("Job Deleted");
     }else{
       alert("Error while Deleting!!!");
     }
+    getData();
   }
   const loadDataForUpdate = async(id)=>{
+    let token = localStorage.getItem("token")
    let matchJob = await jobList.filter((j)=>id == j._id);
    console.log(matchJob);
    setId(id);
@@ -53,6 +77,7 @@ function App() {
    passwordRef.current.value = matchJob[0].password;
   }
   const updateJob = async()=>{
+    let token = localStorage.getItem("token")
     let data = {
       "id":id,
       "name":nameRef.current.value ,
@@ -61,7 +86,7 @@ function App() {
       "email":emailRef.current.value,
       "password":passwordRef.current.value
     }
-    let res = await fetch("http://localhost:8080/updateJobsById",{method:"POST",body:JSON.stringify(data),headers:{"content-type":"application/json"}});
+    let res = await fetch("http://localhost:8080/api/updateJobsById",{method:"POST",body:JSON.stringify(data),headers:{"content-type":"application/json","token":token}});
     let json = await res.json();
     console.log(json);
     if(res.ok){
@@ -92,6 +117,24 @@ function App() {
             )
         })
       }
+     <div>
+      <h1>LOGIN</h1>
+      
+      
+      <div>
+        <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      </div><br/>
+
+      <div>
+        <input 
+          type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </div><br/>
+
+      <div>
+      
+        <input type="button" value="Submit" onClick={loginapi} />
+      </div>
+    </div>
       <div>
         <h1> create jobs form</h1>
         <div><input type ="name"  placeholder="NAME"  ref={nameRef}></input></div><br></br>

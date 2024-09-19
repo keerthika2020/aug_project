@@ -1,21 +1,30 @@
 var exp = require("express") ;
+var fileUpload = require("express-fileupload");
+
 var app = exp();
 app.use(exp.json());
-var jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 // install cors in the express to avoid cors error
 var cors = require("cors");
 app.use(cors());
 app.use('/api/',(req,res,next)=>{
    //reading the header from the header
    let {token} = req.headers;
-   if(token == "" || token == undefined){
+   if(token === "" || token === undefined){
       res.json({"msg":"pls send the token"})
    }else{
-      jwt.verify(token,'secret');
+      console.log("I'm middleware");
+      jwt.verify(token,'secret'); 
+      next();
    }
-   //console.log("I'm middleware");
-   //next();
+  
 });
+// limitation for the file upload like size of the file
+app.use(fileUpload({
+  limits: { fileSize: 50 * 1024 * 1024 },
+ }));
+
+
 //mongodb 
 const { MongoClient ,ObjectId} = require('mongodb');
 // Connection URL
@@ -25,7 +34,7 @@ const client = new MongoClient(url);
 // Database Name
 const dbName = 'jobportal';
 //create a job record
-app.post("/createJob",async(req,res)=>{
+app.post("/api/createJob",async(req,res)=>{
     var {name,company_name,requirements,email,password} = req.body;
     await client.connect();
     let db = client.db(dbName);
@@ -36,10 +45,12 @@ app.post("/createJob",async(req,res)=>{
         "email":email,
         "password":password,
     });
+    
+    res.json({ msg: "Job created"});
     // to find a particular requirement from a name
     //let a = await db.collection("jobs").findOne({"name":"Hasika.B"});
     //console.log(a["requirements"][1]);
-    res.json({"msg":"job created"});
+   
    
 })
 // create many records at once.
@@ -55,6 +66,7 @@ app.get("/api/jobslist",async(req,res)=>{
     let db = client.db(dbName);
     let list = await db.collection('jobs').find({}).toArray();
     res.status(200).json(list);
+    console.log("Jobs list fetched:", list);
  })
  //get job details based on its name
  app.get("/api/jobslistnames/:name",async(req,res)=>{
@@ -105,6 +117,7 @@ app.get("/api/getJobsById",async(req,res)=>{
     res.json({"msg" :"jobs updated"});
  })
 
+
 //login api check and create  a token 
 app.post("/login", async(req,res)=>{
    let {email,password} = req.body;
@@ -114,16 +127,25 @@ app.post("/login", async(req,res)=>{
 
    if(loginRes.length>0){
       var token = jwt.sign({ 'name':loginRes[0]['name'] }, 'secret');
-         res.json({"msg":"you are correct","token ": token});
+         res.json({"msg":"you are correct","token": token});
      }else{
          res.status(400).json({"msg":"you are wrong"});
      }
 })
+//file upload code
 
+app.post('/upload', function(req, res) {
+   let file = req.files.img;
+   
+   let uploadPath = __dirname + '/uploads/' + file.name;
+   file.mv(uploadPath,function(err){
+      if(err)
+         return res.status(500).send(err);
+      res.send("File uploaded!!")
+   })
+   
+ });
 
 app.listen(8080,()=>{
     console.log("server started");
 })
-
-
-
