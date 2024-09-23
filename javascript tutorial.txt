@@ -877,3 +877,11 @@ file upload is used only with post http method and not anyother.
 post man body formdata key img dropdown file 
 img file each time for multiple image upload
 array using forloop 
+
+				Day 22 10/09/2024
+login html
+				Day 24 20/9/2024
+only react application need build process
+npm run build
+pm2 start app.js
+props only for a parent to child like home to the header

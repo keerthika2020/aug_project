@@ -22,11 +22,13 @@ export default function Home(){
     }
     return(
         <div>
+            <Header currentPage="Home"> </Header>
+
             <h1>HOME PAGE</h1>
             
 
              <h1>{counterVal}</h1>
-           {(status)? <p className="red">This is a paragraph</p>:null}
+           {<p className="red">This is a paragraph</p>}
           
             <input type="button" onClick={()=>add()}value="Add"/><br></br><br></br>
             <input type="button" onClick={()=>sub()} value="Sub"/><br></br><br></br>
@@ -42,8 +44,10 @@ export default function Home(){
 
 
 
+/*
+{(status)? <p className="red">This is a paragraph</p>:null}
 
-/*import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "./Header";
 
 export default function Home(){
