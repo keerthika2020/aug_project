@@ -143,7 +143,19 @@ app.post('/upload', function(req, res) {
          return res.status(500).send(err);
       res.send("File uploaded!!")
    })
-   
+   // multiple files upload
+app.post('/uploadmulti', function(req, res) {
+   let file = req.files.img;
+   let uploadPath = __dirname + '/uploads/' + file.name;
+
+   file.mv(uploadPath, function(err){
+       if (err){
+           return res.status(500).send(err);
+       }
+       res.send('file uploaded');
+   })
+ });
+
  });
 
 app.listen(8080,()=>{

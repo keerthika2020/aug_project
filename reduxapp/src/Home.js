@@ -34,7 +34,7 @@ export default function Home(){
             <input type="button" onClick={()=>sub()} value="Sub"/><br></br><br></br>
             <input type="button" onClick={()=>storeMyDetails()}value="storemydetails"/>
 
-            <Header/>
+           
         </div>
     )
 

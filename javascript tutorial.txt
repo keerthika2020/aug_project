@@ -452,6 +452,7 @@ import Header from "./Header";
 common state/store management : it is a common storage to share the variable of one page to another page to share data across the components
 we use redux to implement this concept
 context default lib comming from react this will also solve the problem but it comes from react 
+
 to do this we need to install the redux library  into our application:    npm install react-redux 
 the next one library to install is :     npm install @reduxjs/toolkit
 configuration : In src create a folder called redux inside it create a file called Config.js
@@ -885,3 +886,53 @@ only react application need build process
 npm run build
 pm2 start app.js
 props only for a parent to child like home to the header
+
+`					Day 25 23/9/2024
+
+
+User module :	login,  
+		register,  
+		submit the product with review  , 
+		search the products,   
+		can see the other product reviews
+
+Adminmodule :	login,  
+		product approval ,  
+		comments review for approval.
+
+Product module:	anyone can search the products(person who has not yet logged in our website can not post any review they can only view it ) ,  
+		can see the reviews ,   
+		user submit the product with thier review
+
+steps:1
+ create a folder called Product_Review
+ npx create-react-app productapp
+ npm install react-router-dom
+step2:
+ create pages folder in src directory
+ AppConstants.js in src
+ Home,Details,Login,Register, in pages directory
+ copy and paste the css and img from template dir to react public dir 
+ Add routing config in app.js
+pub index> 
+						Day 26 24/9/2024
+pages =>createApproval.js,AdminLogin.js
+https://github.com/programmerpraveenkumar/vaishnav_college_2024/tree/master/producto-review/app/src/pages 
+copy paste the addreviewand login page from thislink 
+create a node file inside the main folder pProduct_Review note it must be in the form
+Product_Review
+	---->node
+	---->productapp
+
+PS C:\Users\Dell Latitude 7410\javascript tutorial> cd Product_Review
+PS C:\Users\Dell Latitude 7410\javascript tutorial\Product_Review> cd node      
+npm init -y
+npm i express-fileupload
+ npm i express          
+ npm i mongodb
+ npm i jsonwebtoken
+ npm i cors        
+
+create Main.js inside the node folder
+have a folder called api inside node and create three files User.js,Admin.js,Product.js
+

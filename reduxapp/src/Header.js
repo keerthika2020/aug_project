@@ -17,7 +17,7 @@ export default function Header(props){
             <NavLink to="/about">About</NavLink><br/>
             <NavLink to="/contact">Contact</NavLink><br/>
 
-            <span> crytop {props.currentPage}</span>
+            <span> This is keerthika {props.currentPage}</span>
         </div>
         
     )
