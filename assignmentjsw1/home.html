@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <style>
+        .body {
+        background-image: url('gallaryimg/cloud.png');
+
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        }
+        
+        .containerhead{
+            position: relative;
+            width: 98%;
+            height: 5%;
+            margin:  auto;
+            text-align: right;
+            background-color: #d3e3e8; 
+            padding: 5px;
+            border-radius: 5px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            overflow: hidden;
+        }
+       
+        .txt {
+            position: absolute;
+            color: rgb(35, 47, 180); 
+            margin-top: 0px;
+            left:1%;
+            font-family: 'Arial Narrow Bold', sans-serif; 
+            font-weight: bold;                            
+                }
+       
+        .img {
+            position: absolute;
+            top: 40%;
+            right: 0;
+            width: 25%; 
+            opacity: 0.8;
+        }
+        .pic{
+            float: left;
+            margin-right: 80px;
+            opacity: 0.8;
+            
+            
+        }
+        .menu{
+            display: flex;
+            margin-left: 60%;
+            list-style-type: none;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+        .menu li{
+        margin: 5px;
+        justify-content: space-around;      
+       }
+       .menu li a {          
+            text-decoration: none; 
+            color: black;
+            padding: 5px 5px;
+            border-radius: 2px; 
+            display: inline-block; 
+            transition: background-color 0.3s, color 0.3s; 
+            
+        }
+
+       
+        .menu li a:hover {
+            background-color: rgb(14, 15, 15);
+            color: rgb(248, 246, 246); 
+        text-decoration: none; 
+        
+    }
+
+
+        .active{
+        background-color:  #68d8fa; 
+        }
+        .align{
+         
+         bottom: 0%;
+         left: 75%;
+         position: fixed;
+        }
+        @media only screen and (max-width:600px){
+            .menu{
+                flex-direction: column;
+            }
+            body{
+                background-color: beige;
+
+            }
+            
+        }
+        
+        .btn {
+            background-color: #04AA6D; 
+            border: none;
+            color: white;
+            padding: 8px 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 2px;}
+            .btncol {
+            background-color: white; 
+            color: black; 
+            border: 2px solid cyan;
+            }
+
+            .btncol:hover {
+            background-color: rgb(20, 20, 20);
+            color: rgb(255, 255, 255);
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+    </style>
+</head>
+<body class="body">
+    <header>
+        <div class="containerhead">
+            <pre class="txt"><h1>YOUR CHILDREN GET ONLY ONE CHILDHOOD 
+                MAKE IT MEMORABLE...  </h1> 
+            </pre><br>
+            <ul class="menu">
+                <li> <h2><a class="active" href="about.html">About</a> </h2>   </li>
+                <li> <h2> <a  class="active" href="contact.html">Contact</a> </h2></li>
+                <li>  <h2><a  class="active" href="gallary.html">Gallary</a> </h2></li>
+                <li><button class="btn btncol"  onclick="location.href='login.html'" >Login</button></li>
+                <li><button class="btn btncol"  onclick="location.href='register.html'">Register</button></li>
+            </ul>
+            </div>
+    </header>
+     
+    
+    <img src="gallaryimg/aero1.png" width="30%" class="pic" ><br><br>
+    <img src="gallaryimg/car.png" width="30%"  class="img" style="margin-bottom: 30%;">
+       
+      
+    
+    <img src="gallaryimg/BIBIPLAY1.png" style="align-items: center; position: absolute;
+    left: 33%;" width="30%" ><br>
+
+    <footer  class="align">
+        <p>
+          copy rights by KEERTHIKA.R
+          </p>
+    </footer>
+   
+</body>
+</html>

@@ -1,0 +1,938 @@
+create a folder in file explorer
+open it in vs 
+create a folder javascript
+create a variable.html file
+type html chose 2 one
+inside head write script we write all the code inside this only
+ var myName = "Your name";
+        console.log(myName);
+golive click
+website > rightclick> inspect >consol
+# inside the terminal
+node -v 
+PS C:\Users\Dell Latitude 7410\javascript tutorial> npx create-react-app app
+# react router for 
+localhost:8080/home->homepage
+localhost:8080/about->aboutpage
+
+# to implement the routing in our vs
+npm install react-router-dom # always need this!
+# config 
+const router = createBrowserRouter([{"path":"home",element:<Home/>},{"path":"about",element:<About/>}
+]);
+
+# to check react app 
+cd app
+ls
+see for package.jason
+npm install react-router-dom 
+
+create 2 file in app > src>  folder(Home.js, About.js)
+function Home(){
+    return(
+        <h1>
+        this is homepage
+        </h1>
+    )
+};
+
+export default Home;
+
+function About(){
+    return(
+        <h1>
+        this is homepage
+        </h1>
+    )
+};
+
+export default About;
+
+now open app.js  12 th line before fn app()
+const config = createBrowserRouter([
+  {path:"/home",element: <Home/>},
+  {path:"/about",element: <About/>}
+]);
+
+3,4,5
+import Home from './Home';
+import {createBrowserRouter,RouterProvider} from 'react-router-dom';
+import {About} from './About';
+
+code:
+App.js
+import './App.css';
+import Home from './Home';
+import About from './About';
+
+
+
+function App() {
+  const getUser=async()=>{
+    let res=await fetch('https://reqres.in/api/users/2');
+    let serverres=await res.json();
+    console.log(serverres['data']);
+  }
+  return (
+    <div>
+      <Home/>
+      <About/>
+      <button onClick={getUser}>Click to get user list</button>
+    </div>
+  );
+}
+
+export default App;
+
+
+Home.js
+function Home(){
+    return(
+        <h1>this is home page</h1>
+    )
+};
+export default Home;
+
+About.js
+function About(){
+    return(
+        <h1>this is About page</h1>
+    )
+};
+export default About;
+
+
+
+
+8.8.24
+<!-- comments in html
+     inline element   width of the content only taken can only contain inline element
+     block element   takes the full width even though the content is small can contain both inline and block ele
+     inline into a block and viceversa be changed
+     <form>tags => action , method 
+        action = send data to server
+        method = 
+    -->
+we can send to server without form tag using javascript 
+<select> tage to display drop down
+<option >tage will display our choices
+<option>tag has value properties/attrikbutes which is used to 
+<input type="submit"> will send our input to server
+<a> anchor tag =
+<li>list
+<ol> ordered <ul> unorded
+#all gives the same output
+<header>  
+<section>
+<footer>
+<div> inside this we can a section
+
+<video controls>
+    <!-- to increase, decrease volumn, pause, start, resume then only our video will
+    have those controls-->
+    <source src="video url"/> 
+     <!-- we need mp4 vedio to use youtube video-->
+</video>
+<audio controls>
+    <!-- to increase, decrease volumn, pause, start, resume then only our audio will
+    have those controls-->
+    <source src="audio url"/> 
+     <!-- we need mp3 audio -->
+</audio>
+developer tool> in a html write a h1 and inspect > elements> go change the text
+it will reflect on the web page when we refresh but this is only temporary
+
+attributes:
+
+class    it can have n no of classes for a particular element
+many elements can have same class name and can have duplicate . for class name
+id     identity and unique for an element # for id
+each element must have unique id 
+<div id ="olo">
+<div id= "jai">
+<p> has next line space
+<article> will not have newline space and continue in nextline
+text area resizeable can type multiple lines
+input box not resizable can type only one line
+
+git init
+git add .
+git commit -m "initial commit"
+git config --global user.email "keerthika.r2122@gmail.com"
+git config --global user.name "keerthika"
+give the code in your git hub code 
+git push -u origin master
+# if you add a file then do this
+git add .
+ git status
+git commit -m "file added"
+git push -u origin master
+
+# day 4 12/8/24
+visibility hidden just hids the element but keeps the space occupied by the element
+display none removes element along with its space
+both hids elements
+flex direction either horiz or verti according to the device like lap and mobile ie row and col
+display flex
+class    it can have n no of classes for a particular element
+many elements can have same class name and can have duplicate . for class name
+id     identity and unique for an element # for id
+each element must have unique id 
+tag name: use css properties
+parent and child selector:
+property override to find error
+ <style>
+    h1{
+                background-color: red;
+            }
+    .div1 h1{
+                background-color: rgb(30, 255, 221);
+            }
+    h2{
+        color:pink ;
+    }
+    .s1 h2{
+        color: blue;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="div1">
+       <h1>barath </h1> 
+    </div>
+    <div class="div2">
+        <h1>
+            zindabad
+        </h1>
+    </div>
+    <section class="s1">
+        <h2>jai ho</h2>
+    </section>
+    <section class="s2">
+        <h2>keerthika</h2>
+    </section>
+</body>
+to change the list of items into horiz or vertical
+display in lineblock 
+display flex
+
+day 5 13/08/24
+let var const differences
+javascript usecases
+let will not allow same variable names for two values 
+redeclaration is not posibble but updation is possible
+const  will not allow same variable names for two values 
+redeclaration and updation is not posibble  
+first head runs and then then the body will run and then script will run so we write script tag in body and not in head
+event handling 
+onclick in the element
+
+day 6 14.08.24
+advanced js 
+es6 
+arrow fn or anonymus function
+function print(){
+}
+document.getElementById().addEventListner('click', () =>{
+})
+# the fn is called automatically without calling the print()
+example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function print(){
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id = "tid"/>
+    <button id = "bid">click</button></br></br>
+    <select id="fruits">
+        <option value="select">Select options</option>
+        <option value="Apple">Apple</option>
+        <option value="Mango">Mango</option>
+        <option value="Orange">Orange</option>
+        <option value="Grapes">Grapes</option>
+    </select>
+</body>
+<script>
+    document.getElementById("bid").addEventListener('click',()=>{
+        let val = document.getElementById("tid").value;
+        console.log(val);
+    })
+    // use this code or the below one 
+    //document.getElementById("fruits").addEventListener('change',()=>{
+       // let val1 = document.getElementById("fruits").value;
+        //console.log(val1)
+    //})
+    //access value and handle event 
+    document.getElementById("fruits").addEventListener('change',(e)=>{
+                console.log(e.target.value);
+    })
+</script>
+</html>
+
+es6 filter in javascript
+filter()= only works with array for iteration 
+filters based on cond
+map() // using map we can iterate each element and do manipulations on them
+goes through each and every element and do changes to the element
+both filter and map will create new array without modifying source array
+# chainning methods
+to filter even no and then multiply them by 2 
+perform server api integration in js
+using fetch method and then given 
+javascript promise: fn has to return something ie either success or failure instead of just execution
+we dont know when it'll return  promise will wait untill it gets a response 
+by default get method is taken if we didn't use fetch 
+whenever we use await we use async
+status code in api in javascript 
+100-199 information response
+200-299 successful responses
+300-399 redirection  messages
+400-499 server is fine but client side error occures
+500-599 internal server has some errors issues but your data is correct
+http :
+to integrate an api in http
+server team has to confirm this three 
+api url 
+the http method
+what type of data is shared 
+JSON.stringify to convert json file to json string
+when we use post method it is mandatory to tell the server that what type of data we are passing
+to the server by using http headers .
+
+day 6 20/8/24
+server has our data so we need api to get the data
+rest api that gets data from the server and gives back to the client 
+server url , http method , data we pass --------> 3 main things
+every server has a unique domain name to reach the server we must give the domain name.
+api can be triggered from the applications that are connect to the internet
+just by calling the fn we can not get the result since it takes some time so we use promise 
+thread parallely running process in javascript we have promise simillar to thread
+promises will wait till the action is completed when we don't know how much time our task gets complete
+fetch method is buit based on the promise concept---> if the server takes 1 min to reply it'll wait for 1 min
+await is a keyword that will halt/pause our code to get executed
+http method:
+get 
+post
+put
+delete
+patch 
+get => going to get the data from the server
+what data ur passing in the get method , will be visible in the url ie the data always be public  
+ it is limited ie we can only send limited character to get method
+post=> send the data to the server
+the data is not visible ,  there is no limitaiton 
+this is why we sent username and password in post method coz of sensitive info in pass is protected by post
+file upload is done with post method coz of file size limations in get method
+but using get we can send string 
+by default the browser points to get only
+
+Day 7  21/08/24
+objct array have key and value pairs
+key must be unique  and value can be duplicate
+object into the index array or vice versa
+json['data']  = > the reqres server has stored that data
+
+These below storages are in client side 
+we can see these two storage in our google browser inspect> application> storage
+local storage and sessoion storage both have data stored in the web browser
+ls data is permanent in user system unless they uninstall or delete the data
+ google mail is automatically loged in coz token is created when we log for first time and stored in local 
+if log in again it checks the token and logs in automatically
+ss data is deleted whenever the user closes the browser or a tab
+for secured based applications 
+net banking websites use ss coz log in netbanking the session is closed when we come out of the website
+cookie 
+u search in amazon but google will give you ads related to the search
+how it know its you and how it give you the ads when u search amazon
+answer is the cookies.... but how????
+when we access google and go to incognito 
+it creates a unique no for you device
+what search is done it's unique id is stored in the google browser and according to the id it shows the ads to u
+actual value will be availabel in the db which is corresponding to the cookie id 
+why use cookie instead of local storage?
+the data in cookie is directly accessible form the server
+but if we use local storage the data can only be stored using javascript
+
+React js
+node package manager = > open source , can be contributed by anyone , can install necessary libraries for our node projects 
+1)	set up a react project:
+new version
+npx create-react-app appname
+always tries to connect to the internet to downloads and sets up a project everytime
+old version
+npm create-react-app appname
+install the lib and further no need to connect to the internet 
+2) cd myapp
+3) npm start
+4) public is accessible to all , src work on it  ,
+ .gitignore files we dont want to track in github 
+package.json what lib we mentioned in project only name and version number 0.1.0 => production.build.localbuild (stage of developement)
+standard of coding  => eslist config  readme is the description of our project.
+packge.lock.jason contains details of where to download the lib form where
+5) micro frontend ??
+DATE 8 22/08/24
+class name and component name must be same as the file name
+we have to give npm start everytime to run our react app
+myapp>src>rightclick>newfile>Home.js create
+this file can't be used for another file if we did not export 
+export is a javascript keyword that will export so that our fn/ var can be used outside the Home.js
+now if we use  <Home/> in our App.js it will print the Home component h1 in website
+{} data binding
+normal react cant use let anbd var since it is not updateable to avoid this react came up with a soltion
+state variable. => whenever we update the var the react will refresh updation automatically
+This should be written in fn :
+
+const [varname , setVar]= useState('your varname value');
+{varname}
+<p><input type='text' placeholder='email' onChange={(e) => setEmail(e.target.value)}/><br></br><br></br>
+      <input type='text' placeholder='mobile' onChange={(e) => setMobile(e.target.value)}/><br></br><br></br>
+      <button>Click</button></p>
+the( e ) is current element or event element
+getter , setters:
+ create a validation like text box is empty throw warning
+add html into js so priority goes to js inside the main fn define another fn validate the newly added fn should be above the return 
+const valid =()=> {
+    
+  }
+
+task 
+create new app
+new component =>  Login.js
+email pass on button click if empty alert mesg show
+
+Day 9: 27.08.24
+in react to display in the webpage
+use state variable to print the value in the screen see for taskapp src register.js
+Day 10 28.08.2024
+create a new app reduxapp npx create-react-app reduxapp
+create 3 pages home about contanct.js files in  src
+and do the routing  npm i react-router-dom
+set up the router:
+since localhost:3000 has an empty end point so it gives an 404 error as we have configured for home , about , contact url 
+so we must inclulde any url like
+http://localhost:3000/About to display the about  page
+import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+
+let routerPaths = createBrowserRouter([
+{ path: "/", element: <Home /> },
+  { path: "/home", element: <Home /> },
+  { path: "/about", element: <About /> },
+  { path: "/contact", element: <Contact /> },
+]);
+
+function App() {
+  return (
+    <div className="App">
+      <RouterProvider router={routerPaths} />
+    </div>
+  );
+}
+
+export default App;
+
+to overcome this issue we use { path: "/", element: <Home /> }, inside the router var so that by default it opens to home page
+note :
+whenever we do render any page in another page like
+<Header></Header> 	give import statement
+import Header from "./Header";
+common state/store management : it is a common storage to share the variable of one page to another page to share data across the components
+we use redux to implement this concept
+context default lib comming from react this will also solve the problem but it comes from react 
+
+to do this we need to install the redux library  into our application:    npm install react-redux 
+the next one library to install is :     npm install @reduxjs/toolkit
+configuration : In src create a folder called redux inside it create a file called Config.js
+our entier app will be the children for the redux
+the configureStore is the common storage for our app.
+import { myStore } from './redux/Config';
+import {Provider} from 'react-redux';
+
+ <Provider store = {myStore}>  
+      <div className="App">
+    <RouterProvider router={routerPaths} />
+  </div>  
+   </Provider>
+configureStore creates a store and  inside that store we store out variable
+reducers are the logic we built
+// state is the initial state ie my value will be this when my page is loaded
+//action whethere we are performing addition or subraction or any other operation ie this action is from 
++ or  - button 
+
+import {configureStore} from '@reduxjs/toolkit'
+import { Provider } from 'react-redux'
+
+const counterLogic = (state = 0, action) => {
+
+}
+
+export const myStore = configureStore({
+    reducer:{
+        "counter":counterLogic, //here counter is the store name
+    }
+})
+
+					Day 11  29.08.2024
+download a folder from the given html 
+put it in public of the redux we will put code in the index.html form that folder to our home.js return()
+give the css link in the public > index.html
+inside the src >create a redux folder and create config.js in it 
+
+npm install react-router-dom
+npm install @reduxjs/toolkit
+npm i react-router-dom 
+ npm install react-redux
+npm install @reduxjs/toolkit react-redux
+					Day 12  02.09.2024
+created nodelecture folder and sample.js 
+to run the code
+node sample.js
+
+node js initially used as frontend  javascript compliler and later changed to server side compiling at backend 
+src should have a file called package.json then it is not considered 
+
+now create a folder called Express and do the following:
+npm init = to create a package json
+//express js library helps the framework will reduce the developement time than in node js
+npm install express
+create main.js file
+to tun the file in the terminal => node file.js
+Day 13 03/09/24
+localhost:8080/myname run it in chrome
+user gives req it goes to rest api then to the db the db will inturn respond with the response
+develope rest api :  previously we pass a req but now we have to catch and consume the req
+to check the api is working or not we post the localhost link localhost:8080/myname in post man and set the appropriate method
+app.get("/myname",(req,res)=> {
+res.json({"name":"KEERTHIKA.R"})
+}); //develope a get api
+app.post("/myname",(req,res)=> {
+    res.json({"age":"22"})
+    }); //develope a post api  => see in postman that this api is working or not 
+note : in post man check what you have given in the app.post must be in the local host link.
+localhost:8080/login 
+app.post("/login",(req,res)=> {
+    res.json({"msg":"Login success"})
+    });
+app.post("/login",(req,res)=> {
+        let email = req['query']['email'];
+        let password = req['query']['password'];
+        if(email == "kiki@gmail.com" && password == "kiki123"){
+            res.json({"msg":"you are correct"})
+        }else{
+            res.json({"msg":"you are wrong"})
+        }
+        console.log(email,password);
+        res.json({"msg":email})
+        });
+ node --watch main.js this command will run automatically and we  dont need to run manually
+deconstructive in javascript.
+req.query can be used in both get and post method in post man we use params
+req.body can only be used in  post method  adding it only once is enough  in post man we use body > select raw > inside the text pass our 
+object {"email":kiki@gmail.com,
+"name":"kiki"
+"password":lkaaf,
+"address","90,koiej street
+} but check to it that the params keys are unchecked and go to body
+we have to mention to the express that we are going to use this 
+var app = express();
+app.use(express.json()) ;// middleware function this should be added below the express() line
+
+Day 14 04/09/24
+mongodb > database> browse collections
+click network access> add ip address> allow access from aywhere>confirm
+username , pass , url = unique for each
+mongodb+srv://keerthikar2122:<db_password>@cluster0.eyxks.mongodb.net/
+change your password with the link 
+
+ in vs code > terminaal> npm install mongodb
+create mongodb_connect.js file in the express folder
+google mongo db node> change url , dbName , collections='movies'
+const { MongoClient } = require('mongodb');
+// or as an es module:
+// import { MongoClient } from 'mongodb'
+
+// Connection URL
+const url = 'give ur url';
+const client = new MongoClient(url);
+
+
+// Database Name
+const dbName = 'sample_mflix';
+async function main() {
+    // Use connect method to connect to the server
+    await client.connect();
+    console.log('Connected successfully to server');
+    const db = client.db(dbName);
+     const data = await db.collection('movies').find({}).toArray();
+    console.log(data);
+  
+    // the following code examples can be pasted here...
+  
+    return 'done.';
+  }
+
+  main()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());
+create a database in mongodb office collection as employee
+and in vs code create a office.js file
+const { MongoClient } = require('mongodb');
+// or as an es module:
+// import { MongoClient } from 'mongodb'
+
+// Connection URL
+const url = 'give your url/';
+const client = new MongoClient(url);
+// Database Name
+const dbName = 'office';
+
+async function insertData(){
+    let empData ={
+        "name":"keerthi",
+        "mobile":"9867234234",
+        "address":"mugappair",
+    }
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = await db.collection('employee');
+    await collection.insertOne(empData);
+    console.log('Record inserted');
+}
+
+insertData();
+
+now node office.js in terminal
+// create staff db teachers collectin
+raw json
+				Day 15 05/09/24
+
+staff >  create another collection called employee
+var express = require("express") 
+    // require is like import 
+// express is built on functions concept 
+var app = express();
+app.use(express.json()); // middleware function
+const { MongoClient } = require('mongodb');
+// or as an es module:
+// import { MongoClient } from 'mongodb'
+
+// Connection URL
+const url = 'mongodb+srv://keerthikar2122:PCr8vleQx1NuWmUo@cluster0.eyxks.mongodb.net/';
+const client = new MongoClient(url);
+// Database Name
+const dbName = 'staff';
+app.post("/Empdet",async(req,res)=>{
+
+         await client.connect();
+        let db = client.db(dbName);
+        await db.collection('employee').insertMany(req.body);
+        res.status(200).json({"message":"Created a record"})
+    
+   
+})
+//to list the employees detalis
+app.post("/Emplist",async(req,res)=>{
+
+   await client.connect();
+   let db = client.db(dbName);
+   let list = await db.collection('employee').find({}).toArray();
+   res.status(200).json(list)
+
+
+})
+// this line should be at the end of the code 
+app.listen(3000,() => {
+    console.log("server started");
+});
+
+ // give the array of onjects to the body of the postman
+[
+    {
+        "_id": "66d9720b7ed09729125f5362",
+        "name": "keer",
+        "email": "keer56@gmail.com",
+        "password": "fsedfasd",
+        "address": "muga street",
+        "mobile": "8888787876"
+    },
+    {
+        "_id": "66d9720b7ed09729125f5361",
+        "name": "hasi",
+        "email": "hasi43@gmail.com",
+        "password": "ddff334",
+        "address": "fast street",
+        "mobile": "9099876749"
+    },
+    {
+        "_id": "66d9720b7ed09729125f5363",
+        "name": "sandu",
+        "email": "sandy78@gmail.com",
+        "password": "fsddfawe4",
+        "address": "minju street",
+        "mobile": "8987670889"
+    }
+]
+
+
+// to filter the details of employess name using pathvariable can work with get and post
+app.get("/Emplistnames/:name",async(req,res)=>{
+
+    await client.connect();
+    let {name} = req.params;
+    let db = client.db(dbName);
+    let list = await db.collection('employee').find({"name":name}).toArray();
+    
+    res.status(200).json(list)
+ 
+ 
+ })
+In the postman link url give :
+http://localhost:8080/Emplistnames/rose
+
+major way of sending data from front end
+path var
+queryparam
+reqbody
+status code
+Day 16 09/09/24
+
+ app.delete("/deleteProductByName",async(req,res)=>{
+    let {pname} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("products").deleteOne({"pname":pname})
+    res.json({"msg" :"product deleted"})
+ })
+ app.put("/updateprice",async(req,res)=>{
+    let {pname,price} = req.query;
+    price = parseInt(price);
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("products").updateOne({"pname": pname} ,{$set:{"price":price}})
+    res.json({"msg" :"product updated"})
+ })
+Day 17 10/09/24
+if you have same name for 3 records  and have to update then :
+updateOne will update for first record
+updateMany will update all the 3 records 
+ create 
+database: jobportal 
+collection: jobs
+empty folder job_portal in the terminal
+npm init
+npm i express mongodb
+					Day 18 11/09/24
+one vs express 8080 another react 3000
+create an backend express called job_portal in that terminal run these code
+ npm init
+npm install express
+npm install mongodb
+create Main.js file and do this 
+
+var exp = require("express") ;
+var app = exp();
+app.use(exp.json());
+// install cors in the express to avoid cors error
+var cors = require("cors");
+app.use(cors());
+//mongodb 
+const { MongoClient ,ObjectId} = require('mongodb');
+// Connection URL
+const url = 'mongodb+srv://keerthikar2122:PCr8vleQx1NuWmUo@cluster0.eyxks.mongodb.net/';
+const client = new MongoClient(url);
+
+// Database Name
+const dbName = 'jobportal';
+//create a job record
+app.post("/createJob",async(req,res)=>{
+    var {name,company_name,requirements} = req.body;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("jobs").insertOne({
+        "name":name,
+        "company_name":company_name,
+        "requirements":requirements
+    });
+    // to find a particular requirement from a name
+    //let a = await db.collection("jobs").findOne({"name":"Hasika.B"});
+    //console.log(a["requirements"][1]);
+    res.json({"msg":"job created"});
+   
+})
+// create many records at once.
+app.post("/createManyJob",async(req,res)=>{
+    await client.connect();
+   let db = client.db(dbName);
+   await db.collection('jobs').insertMany(req.body);
+   res.status(200).json({"message":"Created a record"});
+})
+// get job detail
+app.get("/jobslist",async(req,res)=>{
+    await client.connect();
+    let db = client.db(dbName);
+    let list = await db.collection('jobs').find({}).toArray();
+    res.status(200).json(list);
+ })
+ //get job details based on its name
+ app.get("/jobslistnames/:name",async(req,res)=>{
+    await client.connect();
+    let {name} = req.params;
+    let db = client.db(dbName);
+    let list = await db.collection('jobs').find({"name":name}).toArray();
+    res.status(200).json(list);
+ })
+ //find the record based on id
+app.get("/getJobsById",async(req,res)=>{
+    let {id} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    let data = await db.collection("jobs").find({"_id":new ObjectId(id)}).toArray();
+    res.json(data);
+ })
+ // delete job based on name
+ app.delete("/deleteJobsByName",async(req,res)=>{
+    let {name} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("jobs").deleteOne({"name":name});
+    res.json({"msg" :"Job deleted"});
+ })
+ //update job based on name
+ app.put("/updateJobsByName",async(req,res)=>{
+    let {name,requirements} = req.query;
+    await client.connect();
+    let db = client.db(dbName);
+    await db.collection("jobs").updateOne( {"name":name},{$set:{"requirements": requirements}});
+    res.json({"msg" :"jobs updated"});
+ })
+app.listen(8080,()=>{
+    console.log("server started");
+})
+
+create an react front end application
+
+
+npx create-react-app jobsapp
+cd jobapp
+npm start
+backend install cors add this plugin in express
+npm i cors
+App.js 
+//to update ui with a dynamic data ie to print the output value in the webpage we need useState to store the data and display it in the webpage
+const [jobList,setJobList] = useState(); //creating a state var  
+setJobList(json) //displaying the state var
+{
+        jobList.map((obj,index)=>{
+            return(
+            <div key={index}>
+              <h2 >{obj.name}</h2>
+              <h2 >{obj.company_name}</h2>
+              <h2 >{obj.requirements}</h2>
+              </div>
+            )
+        })
+      }
+whenever we use map we need to use index this is called mapper
+
+					Day 19 12/09/24
+micro frontend :
+update and delete using react and express
+					Day 20 13/09/24
+
+tokens
+express : create login api password email post
+jwt node
+$ npm install jsonwebtoken
+cretate token by import library
+var jwt = require('jsonwebtoken');
+inside the api login
+var token = jwt.sign({ 'name':loginRes[0]['name'] }, 'secret');
+here secret is the private key when encode and decoding we must pass this key for validation
+gateway is optional in our application.// this is called middleware/interceptor
+res and req comes and goes through this middleware only
+in post man headers is used for all the http methods
+body is used for  post 
+query for others
+app.post("/login") --------> 
+app.post("/api/list_job") --------->
+
+				Day 21 18/09/24
+express file uplode for backend
+react file uplode for front end 
+npm i express-fileupload
+file upload is used only with post http method and not anyother.
+post man body formdata key img dropdown file 
+img file each time for multiple image upload
+array using forloop 
+
+				Day 22 10/09/2024
+login html
+				Day 24 20/9/2024
+only react application need build process
+npm run build
+pm2 start app.js
+props only for a parent to child like home to the header
+
+`					Day 25 23/9/2024
+
+
+User module :	login,  
+		register,  
+		submit the product with review  , 
+		search the products,   
+		can see the other product reviews
+
+Adminmodule :	login,  
+		product approval ,  
+		comments review for approval.
+
+Product module:	anyone can search the products(person who has not yet logged in our website can not post any review they can only view it ) ,  
+		can see the reviews ,   
+		user submit the product with thier review
+
+steps:1
+ create a folder called Product_Review
+ npx create-react-app productapp
+ npm install react-router-dom
+step2:
+ create pages folder in src directory
+ AppConstants.js in src
+ Home,Details,Login,Register, in pages directory
+ copy and paste the css and img from template dir to react public dir 
+ Add routing config in app.js
+pub index> 
+						Day 26 24/9/2024
+pages =>createApproval.js,AdminLogin.js
+https://github.com/programmerpraveenkumar/vaishnav_college_2024/tree/master/producto-review/app/src/pages 
+copy paste the addreviewand login page from thislink 
+create a node file inside the main folder pProduct_Review note it must be in the form
+Product_Review
+	---->node
+	---->productapp
+
+PS C:\Users\Dell Latitude 7410\javascript tutorial> cd Product_Review
+PS C:\Users\Dell Latitude 7410\javascript tutorial\Product_Review> cd node      
+npm init -y
+npm i express-fileupload
+ npm i express          
+ npm i mongodb
+ npm i jsonwebtoken
+ npm i cors        
+
+create Main.js inside the node folder
+have a folder called api inside node and create three files User.js,Admin.js,Product.js
+
